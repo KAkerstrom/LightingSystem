@@ -12,7 +12,7 @@ namespace LightingSystemUI
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main() //test2
+        static void Main() //test2 mhfg
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
