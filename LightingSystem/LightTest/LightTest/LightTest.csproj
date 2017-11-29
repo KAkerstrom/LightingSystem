@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BE630F5-7E04-47A1-BF14-CF46D2C0CB04}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LightTest</RootNamespace>
+    <AssemblyName>LightTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CyUSB">
+      <HintPath>.\CyUSB.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="C4UFX.cs" />
+    <Compile Include="CANControls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CANControls.designer.cs">
+      <DependentUpon>CANControls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kyle\CANInterface.cs" />
+    <Compile Include="Kyle\Devices\DimmerOut.cs" />
+    <Compile Include="Kyle\Devices\InfraredInput.cs" />
+    <Compile Include="Kyle\Devices\LatLong.cs" />
+    <Compile Include="Kyle\Devices\MechanicalSwitch.cs" />
+    <Compile Include="Kyle\Devices\RealTimeClock.cs" />
+    <Compile Include="Kyle\Devices\Scene.cs" />
+    <Compile Include="Kyle\Devices\StatusLED.cs" />
+    <Compile Include="Kyle\Devices\TimerEvent.cs" />
+    <Compile Include="Kyle\Devices\UnknownDevice.cs" />
+    <Compile Include="Kyle\Entity.cs" />
+    <Compile Include="Kyle\Enums\CANStatEnum.cs" />
+    <Compile Include="Kyle\Device.cs" />
+    <Compile Include="Kyle\Enums\CommandsEnum.cs" />
+    <Compile Include="Kyle\IDeserialize.cs" />
+    <Compile Include="Kyle\Light.cs" />
+    <Compile Include="Kyle\Enums\DataEnum.cs" />
+    <Compile Include="Kyle\Enums\FiltersEnum.cs" />
+    <Compile Include="Kyle\Enums\SignaturesEnum.cs" />
+    <Compile Include="Kyle\Enums\WarningEnum.cs" />
+    <Compile Include="Kyle\FndTndStruct.cs" />
+    <Compile Include="Kyle\KyleTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kyle\KyleTestForm.Designer.cs">
+      <DependentUpon>KyleTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kyle\NewPing.cs" />
+    <Compile Include="Kyle\Node.cs" />
+    <Compile Include="Kyle\Nodes\ACDimmer.cs" />
+    <Compile Include="Kyle\Nodes\SceneController.cs" />
+    <Compile Include="Kyle\Nodes\SmartSwitch.cs" />
+    <Compile Include="Kyle\Nodes\TimerRTC.cs" />
+    <Compile Include="Kyle\Nodes\UnknownNode.cs" />
+    <Compile Include="Kyle\Poll.cs" />
+    <Compile Include="Kyle\CANPing.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestBed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestBed.Designer.cs">
+      <DependentUpon>TestBed.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CANControls.resx">
+      <DependentUpon>CANControls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kyle\KyleTestForm.resx">
+      <DependentUpon>KyleTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TestBed.resx">
+      <DependentUpon>TestBed.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

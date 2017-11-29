@@ -1,0 +1,71 @@
+c:\users\sletkeman\documents\visual studio 2017\Projects\LightTest\LightTest\obj\Debug\LightTest.csprojResolveAssemblyReference.cache
+c:\users\sletkeman\documents\visual studio 2017\Projects\LightTest\LightTest\obj\Debug\LightTest.CANControls.resources
+c:\users\sletkeman\documents\visual studio 2017\Projects\LightTest\LightTest\obj\Debug\LightTest.Properties.Resources.resources
+c:\users\sletkeman\documents\visual studio 2017\Projects\LightTest\LightTest\obj\Debug\LightTest.csproj.GenerateResource.Cache
+c:\users\sletkeman\documents\visual studio 2017\Projects\LightTest\LightTest\obj\Debug\LightTest.Form1.resources
+c:\users\sletkeman\documents\visual studio 2017\Projects\LightTest\LightTest\bin\Debug\LightTest.exe.config
+c:\users\sletkeman\documents\visual studio 2017\Projects\LightTest\LightTest\bin\Debug\LightTest.exe
+c:\users\sletkeman\documents\visual studio 2017\Projects\LightTest\LightTest\bin\Debug\LightTest.pdb
+c:\users\sletkeman\documents\visual studio 2017\Projects\LightTest\LightTest\bin\Debug\CyUSB.dll
+c:\users\sletkeman\documents\visual studio 2017\Projects\LightTest\LightTest\obj\Debug\LightTest.exe
+c:\users\sletkeman\documents\visual studio 2017\Projects\LightTest\LightTest\obj\Debug\LightTest.pdb
+V:\Steve\Lighting System files\LightTest\LightTest\bin\Debug\LightTest.exe.config
+V:\Steve\Lighting System files\LightTest\LightTest\bin\Debug\LightTest.exe
+V:\Steve\Lighting System files\LightTest\LightTest\bin\Debug\LightTest.pdb
+V:\Steve\Lighting System files\LightTest\LightTest\bin\Debug\CyUSB.dll
+V:\Steve\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.csprojResolveAssemblyReference.cache
+V:\Steve\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.CANControls.resources
+V:\Steve\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.Form1.resources
+V:\Steve\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.Properties.Resources.resources
+V:\Steve\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.csproj.GenerateResource.Cache
+V:\Steve\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.exe
+V:\Steve\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.pdb
+F:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\bin\Debug\LightTest.exe.config
+F:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\bin\Debug\LightTest.exe
+F:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\bin\Debug\LightTest.pdb
+F:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\bin\Debug\CyUSB.dll
+F:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.csprojResolveAssemblyReference.cache
+F:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.CANControls.resources
+F:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.Form1.resources
+F:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.Properties.Resources.resources
+F:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.csproj.GenerateResource.Cache
+F:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.exe
+F:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.pdb
+F:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.TestBed.resources
+E:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\bin\Debug\LightTest.exe.config
+E:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.exe
+E:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.pdb
+E:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.csprojResolveAssemblyReference.cache
+E:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.CANControls.resources
+E:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.Form1.resources
+E:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.KylesClasses.KyleTestForm.resources
+E:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.Properties.Resources.resources
+E:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.TestBed.resources
+E:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.csproj.GenerateResource.Cache
+F:\2nd _Year\Systems Design\Lighting System files\LightTest\LightTest\obj\Debug\LightTest.Kyle.KyleTestForm.resources
+C:\Users\kyle.akerstrom\Desktop\LightingSystemUI\LightTest\LightTest\bin\Debug\LightTest.exe.config
+C:\Users\kyle.akerstrom\Desktop\LightingSystemUI\LightTest\LightTest\bin\Debug\LightTest.exe
+C:\Users\kyle.akerstrom\Desktop\LightingSystemUI\LightTest\LightTest\bin\Debug\LightTest.pdb
+C:\Users\kyle.akerstrom\Desktop\LightingSystemUI\LightTest\LightTest\bin\Debug\CyUSB.dll
+C:\Users\kyle.akerstrom\Desktop\LightingSystemUI\LightTest\LightTest\obj\Debug\LightTest.csprojResolveAssemblyReference.cache
+C:\Users\kyle.akerstrom\Desktop\LightingSystemUI\LightTest\LightTest\obj\Debug\LightTest.CANControls.resources
+C:\Users\kyle.akerstrom\Desktop\LightingSystemUI\LightTest\LightTest\obj\Debug\LightTest.Form1.resources
+C:\Users\kyle.akerstrom\Desktop\LightingSystemUI\LightTest\LightTest\obj\Debug\LightTest.Kyle.KyleTestForm.resources
+C:\Users\kyle.akerstrom\Desktop\LightingSystemUI\LightTest\LightTest\obj\Debug\LightTest.Properties.Resources.resources
+C:\Users\kyle.akerstrom\Desktop\LightingSystemUI\LightTest\LightTest\obj\Debug\LightTest.TestBed.resources
+C:\Users\kyle.akerstrom\Desktop\LightingSystemUI\LightTest\LightTest\obj\Debug\LightTest.csproj.GenerateResource.Cache
+C:\Users\kyle.akerstrom\Desktop\LightingSystemUI\LightTest\LightTest\obj\Debug\LightTest.exe
+C:\Users\kyle.akerstrom\Desktop\LightingSystemUI\LightTest\LightTest\obj\Debug\LightTest.pdb
+F:\2nd _Year\Systems Design\LightingSystemProject\LightTest\LightTest\bin\Debug\LightTest.exe.config
+F:\2nd _Year\Systems Design\LightingSystemProject\LightTest\LightTest\bin\Debug\LightTest.exe
+F:\2nd _Year\Systems Design\LightingSystemProject\LightTest\LightTest\bin\Debug\LightTest.pdb
+F:\2nd _Year\Systems Design\LightingSystemProject\LightTest\LightTest\bin\Debug\CyUSB.dll
+F:\2nd _Year\Systems Design\LightingSystemProject\LightTest\LightTest\obj\Debug\LightTest.csprojResolveAssemblyReference.cache
+F:\2nd _Year\Systems Design\LightingSystemProject\LightTest\LightTest\obj\Debug\LightTest.CANControls.resources
+F:\2nd _Year\Systems Design\LightingSystemProject\LightTest\LightTest\obj\Debug\LightTest.Form1.resources
+F:\2nd _Year\Systems Design\LightingSystemProject\LightTest\LightTest\obj\Debug\LightTest.Kyle.KyleTestForm.resources
+F:\2nd _Year\Systems Design\LightingSystemProject\LightTest\LightTest\obj\Debug\LightTest.Properties.Resources.resources
+F:\2nd _Year\Systems Design\LightingSystemProject\LightTest\LightTest\obj\Debug\LightTest.TestBed.resources
+F:\2nd _Year\Systems Design\LightingSystemProject\LightTest\LightTest\obj\Debug\LightTest.csproj.GenerateResource.Cache
+F:\2nd _Year\Systems Design\LightingSystemProject\LightTest\LightTest\obj\Debug\LightTest.exe
+F:\2nd _Year\Systems Design\LightingSystemProject\LightTest\LightTest\obj\Debug\LightTest.pdb
