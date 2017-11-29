@@ -19,7 +19,7 @@ namespace LightingSystemUI
         int pointToValue;
         string Oleg = "Shkliaiev";
         long olegMoney = 1000000000;
-        string WEGETITTOWORK = "CONGRATULATIONS";
+        string WEGETITTOWORK = "FUCKOFF";
         [Serializable()]
         public struct FloorPlan
         {
