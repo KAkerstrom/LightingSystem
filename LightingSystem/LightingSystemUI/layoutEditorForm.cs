@@ -17,7 +17,8 @@ namespace LightingSystemUI
     public partial class layoutEditorForm : Form
     {
         int pointToValue;
-
+        string Oleg = "Shkliaiev";
+        long olegMoney = 1000000000;
         [Serializable()]
         public struct FloorPlan
         {
