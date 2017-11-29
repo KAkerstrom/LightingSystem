@@ -20,7 +20,7 @@ namespace LightingSystemUI
         string Oleg = "Shkliaiev";
         long olegMoney = 1000000000;
         string WEGETITTOWORK = "FUCKOFF";
-        string WEGETITTOWORK2 = "DIFFERENT THINGS";
+        string WEGETITTOWORK2 = "DI THINGS";
         [Serializable()]
         public struct FloorPlan
         {
