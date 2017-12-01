@@ -114,3 +114,12 @@ C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingS
 C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.exe
 C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.pdb
 C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.PropertiesForm.resources
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csprojResolveAssemblyReference.cache
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.Form1.resources
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.layoutEditorForm.resources
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.LightIcon.resources
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.PropertiesForm.resources
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.Properties.Resources.resources
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csproj.GenerateResource.Cache
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.exe
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.pdb

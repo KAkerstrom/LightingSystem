@@ -214,7 +214,36 @@ namespace LightTest.Kyle
                     sendList[node.NodeId].Add(device.DeviceId);
             }
 
-            PongsReceived?.Invoke(allResponses);
+            CANPing poll = new CANPing(Commands.CmdSysEPar, sendList);
+            poll.ResponseReceived += Parameters_Received;
+        }
+
+        private static void Parameters_Received(List<C4UFX.CANMessage> responses)
+        {
+            StatusUpdate?.Invoke("Querying parameters (1/2)...");
+
+            foreach (C4UFX.CANMessage response in responses)
+            {
+                FndTnd address = CANInterface.IdToFndTnd(response.ID);
+                if (address.FromDevice == 0)
+                    for (int i = 0; i < response.DLC - 1; i++)
+                        allResponses.First(x => x.NodeId == address.FromNode).Parameters[i] = response.Data[i + 1];
+                //else
+                //    allResponses.First(x => x.NodeId == address.FromNode).Devices.First(x => x.DeviceId == address.FromDevice).SetNamePart(namePart, 2);
+            }
+
+            Dictionary<byte, List<byte>> sendList = new Dictionary<byte, List<byte>>();
+            foreach (Node node in allResponses)
+            {
+                if (sendList.Keys.Contains(node.NodeId))
+                    break;
+                sendList.Add(node.NodeId, new List<byte>());
+                foreach (Device device in node.Devices)
+                    sendList[node.NodeId].Add(device.DeviceId);
+            }
+
+            CANPing poll = new CANPing(Commands.CmdSysEName3, sendList);
+            poll.ResponseReceived += Name3Poll_Received;
         }
     }
 }

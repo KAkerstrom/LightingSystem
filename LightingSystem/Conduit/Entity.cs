@@ -52,8 +52,7 @@ namespace LightTest.Kyle
                 if (parameters != value)
                     ParametersChanged?.Invoke();
 
-                for (int i = 0; i < 8; i++)
-                    parameters[i] = value[i];
+                parameters = value;
             }
         }
 
