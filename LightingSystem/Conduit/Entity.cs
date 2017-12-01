@@ -1,10 +1,11 @@
-﻿using System;
+﻿using LightTest;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LightTest.Kyle
+namespace Conduit
 {
     [Serializable]
     public abstract class Entity

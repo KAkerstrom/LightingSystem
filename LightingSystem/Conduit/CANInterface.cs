@@ -1,9 +1,10 @@
-﻿using LightTest.Kyle.Enums;
+﻿using Conduit.Enums;
+using LightTest;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace LightTest.Kyle
+namespace Conduit
 {
     public delegate void MessageReceivedDelegate(C4UFX.CANMessage message);
     public delegate void MessageSentDelegate(C4UFX.CANMessage message);

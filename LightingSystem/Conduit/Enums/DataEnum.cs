@@ -1,4 +1,4 @@
-﻿namespace LightTest.Kyle.Enums
+﻿namespace Conduit.Enums
 {
     /// <summary>
     /// The identifiers for each byte in the data array.

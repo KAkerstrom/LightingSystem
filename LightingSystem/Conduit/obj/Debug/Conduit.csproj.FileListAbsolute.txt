@@ -6,7 +6,6 @@ C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\Conduit\b
 C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\Conduit\bin\Debug\LightTest.pdb
 C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\Conduit\bin\Debug\LightTest.exe.config
 C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.csprojResolveAssemblyReference.cache
-C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\LightTest.Kyle.KyleTestForm.resources
 C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.Properties.Resources.resources
 C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.csproj.GenerateResource.Cache
 C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.exe
