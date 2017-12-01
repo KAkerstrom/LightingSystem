@@ -42,19 +42,19 @@
             this.propertiesToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // toggleOnOffToolStripMenuItem
             // 
             this.toggleOnOffToolStripMenuItem.Name = "toggleOnOffToolStripMenuItem";
-            this.toggleOnOffToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.toggleOnOffToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.toggleOnOffToolStripMenuItem.Text = "Toggle On/Off";
             // 
             // propertiesToolStripMenuItem
             // 
             this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
-            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.propertiesToolStripMenuItem.Text = "Properties";
+            this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.propertiesToolStripMenuItem_Click);
             // 
             // LightIcon
             // 
