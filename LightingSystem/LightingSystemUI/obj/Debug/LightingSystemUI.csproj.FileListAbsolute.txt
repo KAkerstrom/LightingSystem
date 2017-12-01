@@ -115,3 +115,23 @@ C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingS
 C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.exe
 C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.pdb
 C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.exe.config
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightingSystemUI.exe.config
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightingSystemUI.exe
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightingSystemUI.pdb
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.exe
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightTest.exe
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\CyUSB.dll
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.pdb
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.exe.config
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightTest.pdb
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightTest.exe.config
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csprojResolveAssemblyReference.cache
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.Form1.resources
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.layoutEditorForm.resources
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.LightIcon.resources
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.PropertiesForm.resources
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.Properties.Resources.resources
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csproj.GenerateResource.Cache
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csproj.CoreCompileInputs.cache
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.exe
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.pdb

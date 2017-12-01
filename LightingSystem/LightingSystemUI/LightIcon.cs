@@ -109,5 +109,11 @@ namespace LightingSystemUI
         }
         #endregion dragndrop
 
+        private void propertiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PropertiesForm propertiesForm = new PropertiesForm();
+            propertiesForm.Show();
+            this.Hide();
+        }
     }
 }

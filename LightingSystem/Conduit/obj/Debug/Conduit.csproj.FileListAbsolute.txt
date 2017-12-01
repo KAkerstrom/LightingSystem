@@ -11,3 +11,10 @@ C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\Conduit\o
 C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.csproj.GenerateResource.Cache
 C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.exe
 C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.pdb
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.csprojResolveAssemblyReference.cache
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\Conduit\obj\Debug\LightTest.Kyle.KyleTestForm.resources
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.Properties.Resources.resources
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.csproj.GenerateResource.Cache
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.csproj.CoreCompileInputs.cache
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.exe
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.pdb
