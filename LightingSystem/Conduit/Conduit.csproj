@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9D516B54-4578-4D0A-9897-6522FDA8638E}</ProjectGuid>
+    <ProjectGuid>{1CF210A5-8153-41EA-BECF-E2FE150D213A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>LightingSystemUI</RootNamespace>
-    <AssemblyName>LightingSystemUI</AssemblyName>
+    <RootNamespace>Conduit</RootNamespace>
+    <AssemblyName>Conduit</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,7 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,43 +45,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CANInterface.cs" />
+    <Compile Include="CANPing.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="Devices\DimmerOut.cs" />
+    <Compile Include="Devices\InfraredInput.cs" />
+    <Compile Include="Devices\LatLong.cs" />
+    <Compile Include="Devices\MechanicalSwitch.cs" />
+    <Compile Include="Devices\RealTimeClock.cs" />
+    <Compile Include="Devices\Scene.cs" />
+    <Compile Include="Devices\StatusLED.cs" />
+    <Compile Include="Devices\TimerEvent.cs" />
+    <Compile Include="Devices\UnknownDevice.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Enums\CANStatEnum.cs" />
+    <Compile Include="Enums\CommandsEnum.cs" />
+    <Compile Include="Enums\DataEnum.cs" />
+    <Compile Include="Enums\FiltersEnum.cs" />
+    <Compile Include="Enums\SignaturesEnum.cs" />
+    <Compile Include="Enums\WarningEnum.cs" />
+    <Compile Include="FndTndStruct.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="layoutEditorForm.cs">
+    <Compile Include="IDeserialize.cs" />
+    <Compile Include="KyleTestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="layoutEditorForm.Designer.cs">
-      <DependentUpon>layoutEditorForm.cs</DependentUpon>
+    <Compile Include="KyleTestForm.Designer.cs">
+      <DependentUpon>KyleTestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LightIcon.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="LightIcon.Designer.cs">
-      <DependentUpon>LightIcon.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Light.cs" />
+    <Compile Include="NewPing.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="Nodes\ACDimmer.cs" />
+    <Compile Include="Nodes\SceneController.cs" />
+    <Compile Include="Nodes\SmartSwitch.cs" />
+    <Compile Include="Nodes\TimerRTC.cs" />
+    <Compile Include="Nodes\UnknownNode.cs" />
+    <Compile Include="Poll.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="PropertiesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PropertiesForm.Designer.cs">
-      <DependentUpon>PropertiesForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="layoutEditorForm.resx">
-      <DependentUpon>layoutEditorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LightIcon.resx">
-      <DependentUpon>LightIcon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PropertiesForm.resx">
-      <DependentUpon>PropertiesForm.cs</DependentUpon>
+    <EmbeddedResource Include="KyleTestForm.resx">
+      <DependentUpon>KyleTestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,7 +100,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -108,18 +115,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\on.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\off.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\idea.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Conduit\Conduit.csproj">
-      <Project>{1cf210a5-8153-41ea-becf-e2fe150d213a}</Project>
-      <Name>Conduit</Name>
+    <ProjectReference Include="..\LightTest\LightTest\LightTest.csproj">
+      <Project>{7be630f5-7e04-47a1-bf14-cf46d2c0cb04}</Project>
+      <Name>LightTest</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

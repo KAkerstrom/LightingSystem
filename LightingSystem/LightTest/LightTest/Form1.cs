@@ -170,8 +170,6 @@ namespace LightTest
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Kyle.KyleTestForm form = new Kyle.KyleTestForm();
-            form.Show();
         }
     }
 }

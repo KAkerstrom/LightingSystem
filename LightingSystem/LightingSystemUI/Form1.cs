@@ -30,14 +30,25 @@ namespace LightingSystemUI
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
 
-            bitmaps = Directory.GetFiles(@"./Layouts/bitmaps/");
+            try
+            {
+                bitmaps = Directory.GetFiles(@"./Layouts/bitmaps/");
+                layouts = Directory.GetFiles(@"./Layouts/serialized/");
+            }
+            catch
+            {
+                Directory.CreateDirectory(@"./Layouts/bitmaps");
+                Directory.CreateDirectory(@"./Layouts/serialized");
+                bitmaps = Directory.GetFiles(@"./Layouts/bitmaps/");
+                layouts = Directory.GetFiles(@"./Layouts/serialized/");
+            }
+
             for (int i = 0; i < bitmaps.Length; i++)
             {
                 ToolStripItem tsbitmaps = (BTNLoadBitmap.DropDownItems.Add(bitmaps[i].Substring(18)));
                 tsbitmaps.Click += Ts_Click;
                 filecharcount = 0;
             }
-            layouts = Directory.GetFiles(@"./Layouts/serialized/");
             for (int i = 0; i < layouts.Length; i++)
             {
                 foreach (char tmp in layouts[i])

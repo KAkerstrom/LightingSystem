@@ -61,42 +61,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kyle\CANInterface.cs" />
-    <Compile Include="Kyle\Devices\DimmerOut.cs" />
-    <Compile Include="Kyle\Devices\InfraredInput.cs" />
-    <Compile Include="Kyle\Devices\LatLong.cs" />
-    <Compile Include="Kyle\Devices\MechanicalSwitch.cs" />
-    <Compile Include="Kyle\Devices\RealTimeClock.cs" />
-    <Compile Include="Kyle\Devices\Scene.cs" />
-    <Compile Include="Kyle\Devices\StatusLED.cs" />
-    <Compile Include="Kyle\Devices\TimerEvent.cs" />
-    <Compile Include="Kyle\Devices\UnknownDevice.cs" />
-    <Compile Include="Kyle\Entity.cs" />
-    <Compile Include="Kyle\Enums\CANStatEnum.cs" />
-    <Compile Include="Kyle\Device.cs" />
-    <Compile Include="Kyle\Enums\CommandsEnum.cs" />
-    <Compile Include="Kyle\IDeserialize.cs" />
-    <Compile Include="Kyle\Light.cs" />
-    <Compile Include="Kyle\Enums\DataEnum.cs" />
-    <Compile Include="Kyle\Enums\FiltersEnum.cs" />
-    <Compile Include="Kyle\Enums\SignaturesEnum.cs" />
-    <Compile Include="Kyle\Enums\WarningEnum.cs" />
-    <Compile Include="Kyle\FndTndStruct.cs" />
-    <Compile Include="Kyle\KyleTestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Kyle\KyleTestForm.Designer.cs">
-      <DependentUpon>KyleTestForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Kyle\NewPing.cs" />
-    <Compile Include="Kyle\Node.cs" />
-    <Compile Include="Kyle\Nodes\ACDimmer.cs" />
-    <Compile Include="Kyle\Nodes\SceneController.cs" />
-    <Compile Include="Kyle\Nodes\SmartSwitch.cs" />
-    <Compile Include="Kyle\Nodes\TimerRTC.cs" />
-    <Compile Include="Kyle\Nodes\UnknownNode.cs" />
-    <Compile Include="Kyle\Poll.cs" />
-    <Compile Include="Kyle\CANPing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBed.cs">
@@ -110,9 +74,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Kyle\KyleTestForm.resx">
-      <DependentUpon>KyleTestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
