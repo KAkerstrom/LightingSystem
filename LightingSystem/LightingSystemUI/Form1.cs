@@ -15,12 +15,16 @@ namespace LightingSystemUI
 {
     public partial class Form1 : Form
     {
+        #region init
         string[] bitmaps, layouts;
         int filecharcount;
         List<Node> allNodes = new List<Node>();
+        #endregion  
 
+        #region Constructor
         public Form1()
         {
+
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             this.SetStyle(ControlStyles.UserPaint, true);
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
@@ -87,7 +91,9 @@ namespace LightingSystemUI
                 Poll.PollNetwork();
             }
         }
+        #endregion
 
+        #region PollEvents
         private void Poll_StatusUpdate(string status)
         {
             statusLbl.Text = status;
@@ -107,24 +113,22 @@ namespace LightingSystemUI
                     }
                 }
         }
+        #endregion
 
+        #region Buttons\form events
         private void Tslayouts_Click(object sender, EventArgs e)
         {
             ToolStripItem ts = (ToolStripItem)sender;
-
             using (layoutEditorForm editorForm = new layoutEditorForm("./Layouts/serialized/" + ts.Text + ".bin"))
             {
                 editorForm.ShowDialog();
             }
         }
-
         private void Ts_Click(object sender, EventArgs e)
         {
             ToolStripItem ts = (ToolStripItem)sender;
-            // layoutEditorForm editorForm = new layoutEditorForm("./Layouts/bitmaps/" + ts.Text);
             Bitmap loaded = new Bitmap("./Layouts/bitmaps/" + ts.Text);
             bitmappanel.BackgroundImage = loaded;
-
         }
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
@@ -136,10 +140,6 @@ namespace LightingSystemUI
             layoutEditorForm editorForm = new layoutEditorForm();
             editorForm.Show();
         }
-
-        private void btnLoadLayoutFromFile_Click(object sender, EventArgs e)
-        {
-
-        }
+        #endregion  
     }
 }
