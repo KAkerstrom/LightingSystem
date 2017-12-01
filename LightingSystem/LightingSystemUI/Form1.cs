@@ -21,7 +21,6 @@ namespace LightingSystemUI
 
         public Form1()
         {
-
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             this.SetStyle(ControlStyles.UserPaint, true);
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
