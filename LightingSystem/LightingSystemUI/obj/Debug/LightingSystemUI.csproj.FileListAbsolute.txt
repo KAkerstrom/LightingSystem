@@ -135,3 +135,4 @@ F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\
 F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csproj.CoreCompileInputs.cache
 F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.exe
 F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.pdb
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.PropertiesForm.resources

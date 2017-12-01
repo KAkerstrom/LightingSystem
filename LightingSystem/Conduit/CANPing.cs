@@ -1,4 +1,4 @@
-﻿using LightTest.Kyle;
+﻿using LightTest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LightTest
+namespace Conduit
 {
     public delegate void ResponseReceivedDelegate(List<C4UFX.CANMessage> responses);
 

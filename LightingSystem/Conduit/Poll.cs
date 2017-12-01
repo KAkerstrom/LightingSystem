@@ -1,6 +1,7 @@
-﻿using LightTest.Kyle.Devices;
-using LightTest.Kyle.Enums;
-using LightTest.Kyle.Nodes;
+﻿using Conduit.Devices;
+using Conduit.Enums;
+using Conduit.Nodes;
+using LightTest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LightTest.Kyle
+namespace Conduit
 {
     public delegate void PongsRecievedDelegate(List<Node> pongs);
     public delegate void StatusUpdateDelegate(string status);

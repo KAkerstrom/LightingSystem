@@ -1,8 +1,9 @@
-﻿using System;
+﻿using LightTest;
+using System;
 using System.Runtime.Serialization;
 using System.Windows.Forms;
 
-namespace LightTest.Kyle
+namespace Conduit
 {
         /// <summary>
         /// Occurs when the brightness is changed.

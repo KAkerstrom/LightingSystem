@@ -1,4 +1,4 @@
-﻿namespace LightTest.Kyle
+﻿namespace Conduit
 {
     /// <summary>
     /// The command codes.

@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LightTest.Kyle;
 
-namespace LightTest.Kyle
+namespace Conduit
 {
     [Serializable]
     public class Device : Entity

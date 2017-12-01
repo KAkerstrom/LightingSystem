@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LightTest.Kyle.Nodes
+namespace Conduit.Nodes
 {
     [Serializable]
     class SceneController : Node

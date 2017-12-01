@@ -1,4 +1,4 @@
-﻿namespace LightTest.Kyle.Enums
+﻿namespace Conduit.Enums
 {
     public enum Filters
     {
