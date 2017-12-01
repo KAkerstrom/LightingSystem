@@ -114,3 +114,6 @@ C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingS
 C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.exe
 C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.pdb
 C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.PropertiesForm.resources
+C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.exe
+C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.pdb
+C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.exe.config
