@@ -18,3 +18,10 @@ F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\
 F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.csproj.CoreCompileInputs.cache
 F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.exe
 F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.pdb
+C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.csprojResolveAssemblyReference.cache
+C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\LightTest.Kyle.KyleTestForm.resources
+C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.Properties.Resources.resources
+C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.csproj.GenerateResource.Cache
+C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.csproj.CoreCompileInputs.cache
+C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.exe
+C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.pdb
