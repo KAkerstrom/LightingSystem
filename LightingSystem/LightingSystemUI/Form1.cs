@@ -86,9 +86,9 @@ namespace LightingSystemUI
             }
             else
             {
-                Poll.PollNetwork();
                 Poll.PongsReceived += Poll_PongsReceived;
                 Poll.StatusUpdate += Poll_StatusUpdate;
+                Poll.PollNetwork();
             }
         }
         #endregion

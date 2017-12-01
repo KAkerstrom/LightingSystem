@@ -97,23 +97,41 @@ F:\2nd _Year\Systems Design\LightingSystemProject\LightingSystemUI\obj\Debug\Lig
 F:\2nd _Year\Systems Design\LightingSystemProject\LightingSystemUI\obj\Debug\LightingSystemUI.csproj.GenerateResource.Cache
 F:\2nd _Year\Systems Design\LightingSystemProject\LightingSystemUI\obj\Debug\LightingSystemUI.exe
 F:\2nd _Year\Systems Design\LightingSystemProject\LightingSystemUI\obj\Debug\LightingSystemUI.pdb
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightingSystemUI.exe.config
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightingSystemUI.exe
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightingSystemUI.pdb
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightTest.exe
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\CyUSB.dll
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightTest.pdb
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightTest.exe.config
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csprojResolveAssemblyReference.cache
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.Form1.resources
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.layoutEditorForm.resources
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.LightIcon.resources
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.Properties.Resources.resources
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csproj.GenerateResource.Cache
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csproj.CoreCompileInputs.cache
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.exe
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.pdb
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.PropertiesForm.resources
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.exe
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.pdb
-C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.exe.config
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightingSystemUI.exe.config
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightingSystemUI.exe
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightingSystemUI.pdb
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightTest.exe
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\CyUSB.dll
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightTest.pdb
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightTest.exe.config
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csprojResolveAssemblyReference.cache
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.Form1.resources
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.layoutEditorForm.resources
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.LightIcon.resources
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.Properties.Resources.resources
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csproj.GenerateResource.Cache
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.exe
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.pdb
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.exe
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.pdb
+C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.exe.config
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightingSystemUI.exe.config
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightingSystemUI.exe
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightingSystemUI.pdb
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.exe
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightTest.exe
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\CyUSB.dll
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.pdb
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\Conduit.exe.config
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightTest.pdb
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\bin\Debug\LightTest.exe.config
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csprojResolveAssemblyReference.cache
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.Form1.resources
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.layoutEditorForm.resources
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.LightIcon.resources
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.PropertiesForm.resources
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.Properties.Resources.resources
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csproj.GenerateResource.Cache
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csproj.CoreCompileInputs.cache
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.exe
+F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.pdb
