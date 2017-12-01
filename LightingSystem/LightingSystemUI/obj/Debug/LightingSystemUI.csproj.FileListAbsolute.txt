@@ -113,3 +113,4 @@ C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingS
 C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csproj.CoreCompileInputs.cache
 C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.exe
 C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.pdb
+C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.PropertiesForm.resources

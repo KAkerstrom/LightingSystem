@@ -77,8 +77,13 @@ namespace LightingSystemUI
                 this.Top = Parent.PointToClient(Cursor.Position).Y - currentPoint.Y;
             }
         }
+
         private void LightIcon_MouseDown_1(object sender, MouseEventArgs e)
         {
+            if (e.Button == MouseButtons.Right)
+            {
+                
+            } 
             currentPoint = this.PointToClient(Cursor.Position); //assigns cursor position to variable to be used in timer code
             Pressed = true; //icon is currently being 'drug'
             myTimer.Enabled = true; //enables timer
@@ -109,5 +114,14 @@ namespace LightingSystemUI
         }
         #endregion dragndrop
 
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            propertiesToolStripMenuItem.Click += PropertiesToolStripMenuItem_Click;
+        }
+
+        private void PropertiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

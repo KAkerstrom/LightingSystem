@@ -28,7 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toggleOnOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toggleOnOffToolStripMenuItem,
+            this.propertiesToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // toggleOnOffToolStripMenuItem
+            // 
+            this.toggleOnOffToolStripMenuItem.Name = "toggleOnOffToolStripMenuItem";
+            this.toggleOnOffToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.toggleOnOffToolStripMenuItem.Text = "Toggle On/Off";
+            // 
+            // propertiesToolStripMenuItem
+            // 
+            this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
+            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.propertiesToolStripMenuItem.Text = "Properties";
             // 
             // LightIcon
             // 
@@ -42,10 +68,15 @@
             this.Size = new System.Drawing.Size(40, 40);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LightIcon_MouseDown_1);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LightIcon_MouseUp_1);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toggleOnOffToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
     }
 }
