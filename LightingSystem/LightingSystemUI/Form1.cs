@@ -19,7 +19,7 @@ namespace LightingSystemUI
 
         string[] bitmaps, layouts;
         int filecharcount;
-        List<Entity> allNodes = new List<Entity>();
+        List<Node> allNodes = new List<Node>();
         List<LightIcon> icons = new List<LightIcon>();
 
         #endregion  
@@ -73,7 +73,7 @@ namespace LightingSystemUI
                 using (Stream stream = File.Open("NodeDevices.bin", FileMode.Open))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
-                    allNodes = (List<Entity>)bin.Deserialize(stream);
+                    allNodes = (List<Node>)bin.Deserialize(stream);
 
                     foreach (Node node in allNodes)
                         foreach (Device device in node.Devices)
@@ -106,7 +106,7 @@ namespace LightingSystemUI
         {
             foreach (Node node in pongs)
             {
-                Node foundNode = (Node)allNodes.FirstOrDefault(x => x.NodeId == node.NodeId && x.DeviceId == node.DeviceId);
+                Node foundNode = allNodes.FirstOrDefault(x => x.NodeId == node.NodeId && x.DeviceId == node.DeviceId);
                 if (foundNode != null)
                     foundNode = node;
                 else
