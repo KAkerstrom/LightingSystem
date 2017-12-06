@@ -133,7 +133,8 @@ namespace LightingSystemUI
         }
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.LightSlateGray, IconToolbox.Location.X, IconToolbox.Location.Y, IconToolbox.Width, IconToolbox.Height);
+            Brush toolboxBrush = new SolidBrush(Color.FromArgb(220, 220, 220));
+            e.Graphics.FillRectangle(toolboxBrush, IconToolbox.Location.X, IconToolbox.Location.Y, IconToolbox.Width, IconToolbox.Height);
         }
 
         private void btnOpenLayoutEditor_Click(object sender, EventArgs e)
