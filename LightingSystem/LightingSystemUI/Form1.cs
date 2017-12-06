@@ -19,6 +19,7 @@ namespace LightingSystemUI
         string[] bitmaps, layouts;
         int filecharcount;
         List<Node> allNodes = new List<Node>();
+
         #endregion  
 
         #region Constructor
@@ -29,7 +30,7 @@ namespace LightingSystemUI
             this.SetStyle(ControlStyles.UserPaint, true);
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
-
+            LightIcon Licon = new LightIcon(IconToolbox, this);
             try
             {
                 bitmaps = Directory.GetFiles(@"./Layouts/bitmaps/");
