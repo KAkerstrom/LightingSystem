@@ -22,9 +22,13 @@ namespace LightingSystemUI
             InitializeComponent();
             this.light = light;
         }
-
+        #region Event Hadlers
         private void PropertiesForm_Load(object sender, EventArgs e)
         {
+            Timer tim = new Timer();
+            tim.Interval = 1;
+            tim.Enabled = true;
+            tim.Tick += Tim_Tick;
             namelbl.Text = "Name: " + light.Name;
             nodelbl.Text = "Node: " + light.NodeId;
             devicelbl.Text = "Device: " + light.DeviceId;
@@ -64,7 +68,12 @@ namespace LightingSystemUI
 
 
         }
-        #region EventHandlers
+
+        private void Tim_Tick(object sender, EventArgs e)
+        {
+            DimValTxt.Text = light.Brightness + "%";
+        }
+
         private void CancelAndClosee_Click(object sender, EventArgs e)
         {
 
@@ -82,27 +91,27 @@ namespace LightingSystemUI
 
         private void trackSoft_Scroll(object sender, EventArgs e)
         {
-
+            light.SoftOnOff = (byte)trackSoft.Value;
         }
 
         private void trackMin_Scroll(object sender, EventArgs e)
         {
-
+            light.MinimumBrightness = (byte)trackMin.Value;
         }
 
         private void trackMax_Scroll(object sender, EventArgs e)
         {
-
+            light.MaximumBrightness = (byte)trackMax.Value;
         }
 
         private void trackPresetOn_Scroll(object sender, EventArgs e)
         {
-
+            light.PresetOn = (byte)trackPresetOn.Value;
         }
 
         private void trackDimStep_Scroll(object sender, EventArgs e)
         {
-
+            light.DimStep = (byte)trackDimStep.Value;
         }
 
         private void OnOff_Click(object sender, EventArgs e)
@@ -143,8 +152,12 @@ namespace LightingSystemUI
         {
 
         }
-        #endregion
 
+        private void trackDimVal_Scroll(object sender, EventArgs e)
+        {
+            light.Brightness = (byte)trackDimVal.Value;
+        }
+        #endregion
 
     }
 }
