@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Conduit;
+using Conduit.Devices;
 
 namespace LightingSystemUI
 {    
@@ -121,9 +122,13 @@ namespace LightingSystemUI
 
         private void propertiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PropertiesForm propertiesForm = new PropertiesForm();
-            propertiesForm.Show();
-            this.Hide();
+            if ((light != null) && (light is DimmerOut))
+            {
+                PropertiesForm propertiesForm = new PropertiesForm((DimmerOut)light);
+                propertiesForm.Show();
+                this.Hide();
+            }
+            
         }
     }
 }
