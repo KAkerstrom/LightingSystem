@@ -89,6 +89,7 @@
             this.trackDimVal.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackDimVal.Size = new System.Drawing.Size(45, 303);
             this.trackDimVal.TabIndex = 0;
+            this.trackDimVal.Scroll += new System.EventHandler(this.trackDimVal_Scroll);
             // 
             // TestingGB
             // 
