@@ -107,3 +107,16 @@ C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightTest
 C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightTest\LightTest\obj\Debug\LightTest.csproj.CoreCompileInputs.cache
 C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightTest\LightTest\obj\Debug\LightTest.exe
 C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\LightTest\LightTest\obj\Debug\LightTest.pdb
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightTest\LightTest\bin\Debug\LightTest.exe.config
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightTest\LightTest\bin\Debug\LightTest.exe
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightTest\LightTest\bin\Debug\LightTest.pdb
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightTest\LightTest\bin\Debug\CyUSB.dll
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightTest\LightTest\obj\Debug\LightTest.csprojResolveAssemblyReference.cache
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightTest\LightTest\obj\Debug\LightTest.CANControls.resources
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightTest\LightTest\obj\Debug\LightTest.Form1.resources
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightTest\LightTest\obj\Debug\LightTest.Properties.Resources.resources
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightTest\LightTest\obj\Debug\LightTest.TestBed.resources
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightTest\LightTest\obj\Debug\LightTest.csproj.GenerateResource.Cache
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightTest\LightTest\obj\Debug\LightTest.csproj.CoreCompileInputs.cache
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightTest\LightTest\obj\Debug\LightTest.exe
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightTest\LightTest\obj\Debug\LightTest.pdb
