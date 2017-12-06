@@ -25,10 +25,7 @@ namespace LightingSystemUI
         #region Event Hadlers
         private void PropertiesForm_Load(object sender, EventArgs e)
         {
-            Timer tim = new Timer();
-            tim.Interval = 1;
-            tim.Enabled = true;
-            tim.Tick += Tim_Tick;
+            light.BrightnessChanged += Light_BrightnessChanged; ;
             namelbl.Text = "Name: " + light.Name;
             nodelbl.Text = "Node: " + light.NodeId;
             devicelbl.Text = "Device: " + light.DeviceId;
@@ -69,7 +66,7 @@ namespace LightingSystemUI
 
         }
 
-        private void Tim_Tick(object sender, EventArgs e)
+        private void Light_BrightnessChanged(byte brightness)
         {
             DimValTxt.Text = light.Brightness + "%";
         }
@@ -92,26 +89,31 @@ namespace LightingSystemUI
         private void trackSoft_Scroll(object sender, EventArgs e)
         {
             light.SoftOnOff = (byte)trackSoft.Value;
+            statuslblsoftonoff.Text = light.SoftOnOff.ToString();
         }
 
         private void trackMin_Scroll(object sender, EventArgs e)
         {
             light.MinimumBrightness = (byte)trackMin.Value;
+            statuslblminimum.Text = light.MinimumBrightness.ToString();
         }
 
         private void trackMax_Scroll(object sender, EventArgs e)
         {
             light.MaximumBrightness = (byte)trackMax.Value;
+            statuslblmaximum.Text = light.MaximumBrightness.ToString();
         }
 
         private void trackPresetOn_Scroll(object sender, EventArgs e)
         {
             light.PresetOn = (byte)trackPresetOn.Value;
+            statuslblpresetOn.Text = light.PresetOn.ToString();
         }
 
         private void trackDimStep_Scroll(object sender, EventArgs e)
         {
             light.DimStep = (byte)trackDimStep.Value;
+            statuslblDimStep.Text = light.DimStep.ToString();
         }
 
         private void OnOff_Click(object sender, EventArgs e)
