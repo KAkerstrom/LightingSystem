@@ -98,9 +98,9 @@ namespace LightingSystemUI
                 if (thisLight != null)
                     thisLight.ToggleOnOff();
             }
-            else if (e.Button == MouseButtons.Right)
+            else if (e.Button == MouseButtons.Right && light is DimmerOut)
             {
-                propform = new PropertiesForm();
+                propform = new PropertiesForm((DimmerOut)light);
                 propform.ShowDialog();
             }
         }
