@@ -32,6 +32,7 @@ namespace LightingSystemUI
         Timer myTimer = new Timer(); //timer for drag n drop code
         Panel bitmappanel;
         bool Pressed = false; //to determine whether or not the mouse is clicked on the control
+        PropertiesForm propform;
         #endregion  init 
 
         #region Constructors
@@ -79,19 +80,28 @@ namespace LightingSystemUI
         }
         private void LightIcon_MouseDown_1(object sender, MouseEventArgs e)
         {
-            currentPoint = this.PointToClient(Cursor.Position); //assigns cursor position to variable to be used in timer code
-            Pressed = true; //icon is currently being 'drug'
-            myTimer.Enabled = true; //enables timer
+            if (e.Button == MouseButtons.Left)
+                {
+                currentPoint = this.PointToClient(Cursor.Position); //assigns cursor position to variable to be used in timer code
+                Pressed = true; //icon is currently being 'drug'
+                if (myTimer.Enabled == false)
+                    myTimer.Enabled = true; //enables timer
 
-            //remove icon from toolbox, add to form (change parent to form)
-            toolboxPanel.Controls.Remove(this);
-            form.bitmappanel.Controls.Add(this);
+                //remove icon from toolbox, add to form (change parent to form)
+                toolboxPanel.Controls.Remove(this);
+                form.bitmappanel.Controls.Add(this);
 
-            //hide toolbox
-            toolboxPanel.SendToBack();
-            //this.BackgroundImage = new Bitmap("idea.png");
-
-            thisLight.ToggleOnOff();
+                //hide toolbox
+                toolboxPanel.SendToBack();
+                //this.BackgroundImage = new Bitmap("idea.png");
+                if (thisLight != null)
+                    thisLight.ToggleOnOff();
+            }
+            else if (e.Button == MouseButtons.Right)
+            {
+                propform = new PropertiesForm();
+                propform.ShowDialog();
+            }
         }
 
         private void LightIcon_MouseUp_1(object sender, MouseEventArgs e)

@@ -46,6 +46,7 @@
             // 
             this.IconToolbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.IconToolbox.BackColor = System.Drawing.Color.Transparent;
+            this.IconToolbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IconToolbox.Location = new System.Drawing.Point(12, 383);
             this.IconToolbox.Name = "IconToolbox";
             this.IconToolbox.Size = new System.Drawing.Size(797, 56);
@@ -115,7 +116,7 @@
             this.bitmappanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bitmappanel.BackColor = System.Drawing.Color.Transparent;
-            this.bitmappanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.bitmappanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bitmappanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bitmappanel.Location = new System.Drawing.Point(12, 28);
             this.bitmappanel.Name = "bitmappanel";

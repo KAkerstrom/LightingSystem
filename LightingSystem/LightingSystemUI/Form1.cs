@@ -19,6 +19,7 @@ namespace LightingSystemUI
         string[] bitmaps, layouts;
         int filecharcount;
         List<Node> allNodes = new List<Node>();
+
         #endregion  
 
         #region Constructor
@@ -29,7 +30,7 @@ namespace LightingSystemUI
             this.SetStyle(ControlStyles.UserPaint, true);
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
-
+            LightIcon Licon = new LightIcon(IconToolbox, this);
             try
             {
                 bitmaps = Directory.GetFiles(@"./Layouts/bitmaps/");
@@ -132,7 +133,8 @@ namespace LightingSystemUI
         }
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.LightSlateGray, IconToolbox.Location.X, IconToolbox.Location.Y, IconToolbox.Width, IconToolbox.Height);
+            Brush toolboxBrush = new SolidBrush(Color.FromArgb(220, 220, 220));
+            e.Graphics.FillRectangle(toolboxBrush, IconToolbox.Location.X, IconToolbox.Location.Y, IconToolbox.Width, IconToolbox.Height);
         }
 
         private void btnOpenLayoutEditor_Click(object sender, EventArgs e)
