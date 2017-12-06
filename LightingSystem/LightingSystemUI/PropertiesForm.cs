@@ -40,27 +40,27 @@ namespace LightingSystemUI
             int i = 0;
             switch (light.Mode)
             {
-                case 0x00:
+                case DimmerMode.Disabled:
                     radDisabled.Checked = true;
                     break;
-                case 1:
+                case DimmerMode.Dimming:
                     radDimming.Checked = true;
                     break;
-                case 2:
+                case DimmerMode.DimmingInverted:
                     radDimmingInverted.Checked = true;
                     break;
-                case 3:
+                case DimmerMode.NonDimming:
                     radNonDimming.Checked = true;
                     break;
-                case 4:
+                case DimmerMode.NonDimmingInverted:
                     radNonDimmingInverted.Checked = true;
                     break;
             }
-            statuslblsoftonoff.Text = "";
-            statuslblminimum.Text = "";
-            statuslblmaximum.Text = "";
-            statuslblpresetOn.Text = "";
-            statuslblDimStep.Text = "";
+            statuslblsoftonoff.Text = light.SoftOnOff.ToString();
+            statuslblminimum.Text = light.MinimumBrightness.ToString();
+            statuslblmaximum.Text = light.MaximumBrightness.ToString();
+            statuslblpresetOn.Text = light.PresetOn.ToString();
+            statuslblDimStep.Text = light.DimStep.ToString();
 
 
         }

@@ -155,3 +155,13 @@ E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.Pro
 E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csproj.GenerateResource.Cache
 E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.exe
 E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.pdb
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csprojResolveAssemblyReference.cache
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.Form1.resources
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.layoutEditorForm.resources
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.LightIcon.resources
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.PropertiesForm.resources
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.Properties.Resources.resources
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csproj.GenerateResource.Cache
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csproj.CoreCompileInputs.cache
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.exe
+C:\Users\oleg.shkliaie\Desktop\GIT\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.pdb
