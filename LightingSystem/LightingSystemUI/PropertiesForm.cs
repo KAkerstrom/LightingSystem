@@ -107,17 +107,17 @@ namespace LightingSystemUI
 
         private void OnOff_Click(object sender, EventArgs e)
         {
-
+            light.ToggleOnOff();
         }
 
         private void btnFullOn_Click(object sender, EventArgs e)
         {
-
+            light.FullOn();
         }
 
         private void Off_Click(object sender, EventArgs e)
         {
-
+            light.SetOnOff(false);
         }
         private void radDisabled_CheckedChanged(object sender, EventArgs e)
         {
