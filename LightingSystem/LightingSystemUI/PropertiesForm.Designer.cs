@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.trackDimVal = new System.Windows.Forms.TrackBar();
             this.TestingGB = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Off = new System.Windows.Forms.Button();
+            this.OnOff = new System.Windows.Forms.Button();
             this.btnFullOn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.GB = new System.Windows.Forms.GroupBox();
@@ -41,18 +41,18 @@
             this.statuslblmaximum = new System.Windows.Forms.Label();
             this.statuslblminimum = new System.Windows.Forms.Label();
             this.statuslblsoftonoff = new System.Windows.Forms.Label();
-            this.trackBar6 = new System.Windows.Forms.TrackBar();
-            this.trackBar5 = new System.Windows.Forms.TrackBar();
-            this.trackBar4 = new System.Windows.Forms.TrackBar();
-            this.trackBar3 = new System.Windows.Forms.TrackBar();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.trackDimStep = new System.Windows.Forms.TrackBar();
+            this.trackPresetOn = new System.Windows.Forms.TrackBar();
+            this.trackMax = new System.Windows.Forms.TrackBar();
+            this.trackMin = new System.Windows.Forms.TrackBar();
+            this.trackSoft = new System.Windows.Forms.TrackBar();
             this.lbldimstep = new System.Windows.Forms.Label();
             this.lblpreseton = new System.Windows.Forms.Label();
             this.lblmaximum = new System.Windows.Forms.Label();
             this.lblminimum = new System.Windows.Forms.Label();
             this.lblsoftonoff = new System.Windows.Forms.Label();
             this.currentVal = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.DimValTxt = new System.Windows.Forms.RichTextBox();
             this.ModeGB = new System.Windows.Forms.GroupBox();
             this.radDimming = new System.Windows.Forms.RadioButton();
             this.radNonDimmingInverted = new System.Windows.Forms.RadioButton();
@@ -67,36 +67,36 @@
             this.devicelbl = new System.Windows.Forms.Label();
             this.statusTextBox = new System.Windows.Forms.RichTextBox();
             this.statuslbl = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackDimVal)).BeginInit();
             this.TestingGB.SuspendLayout();
             this.GB.SuspendLayout();
             this.customizationGB.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackDimStep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackPresetOn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackSoft)).BeginInit();
             this.currentVal.SuspendLayout();
             this.ModeGB.SuspendLayout();
             this.SuspendLayout();
             // 
-            // trackBar1
+            // trackDimVal
             // 
-            this.trackBar1.Location = new System.Drawing.Point(162, 29);
-            this.trackBar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar1.Size = new System.Drawing.Size(45, 303);
-            this.trackBar1.TabIndex = 0;
+            this.trackDimVal.Location = new System.Drawing.Point(162, 29);
+            this.trackDimVal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.trackDimVal.Maximum = 100;
+            this.trackDimVal.Name = "trackDimVal";
+            this.trackDimVal.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackDimVal.Size = new System.Drawing.Size(45, 303);
+            this.trackDimVal.TabIndex = 0;
             // 
             // TestingGB
             // 
-            this.TestingGB.Controls.Add(this.button2);
-            this.TestingGB.Controls.Add(this.button1);
+            this.TestingGB.Controls.Add(this.Off);
+            this.TestingGB.Controls.Add(this.OnOff);
             this.TestingGB.Controls.Add(this.btnFullOn);
             this.TestingGB.Controls.Add(this.label1);
-            this.TestingGB.Controls.Add(this.trackBar1);
+            this.TestingGB.Controls.Add(this.trackDimVal);
             this.TestingGB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TestingGB.Location = new System.Drawing.Point(1045, 221);
             this.TestingGB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -106,33 +106,32 @@
             this.TestingGB.TabIndex = 1;
             this.TestingGB.TabStop = false;
             this.TestingGB.Text = "Testing";
-            this.TestingGB.Enter += new System.EventHandler(this.TestingGB_Enter);
             // 
-            // button2
+            // Off
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(12, 136);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(142, 41);
-            this.button2.TabIndex = 4;
-            this.button2.Tag = "";
-            this.button2.Text = "Full On";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Off.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Off.Location = new System.Drawing.Point(12, 136);
+            this.Off.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Off.Name = "Off";
+            this.Off.Size = new System.Drawing.Size(142, 41);
+            this.Off.TabIndex = 4;
+            this.Off.Tag = "";
+            this.Off.Text = "Off";
+            this.Off.UseVisualStyleBackColor = true;
+            this.Off.Click += new System.EventHandler(this.Off_Click);
             // 
-            // button1
+            // OnOff
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 84);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 42);
-            this.button1.TabIndex = 3;
-            this.button1.Tag = "";
-            this.button1.Text = "Full On";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.OnOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OnOff.Location = new System.Drawing.Point(12, 84);
+            this.OnOff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.OnOff.Name = "OnOff";
+            this.OnOff.Size = new System.Drawing.Size(142, 42);
+            this.OnOff.TabIndex = 3;
+            this.OnOff.Tag = "";
+            this.OnOff.Text = "On/Off";
+            this.OnOff.UseVisualStyleBackColor = true;
+            this.OnOff.Click += new System.EventHandler(this.OnOff_Click);
             // 
             // btnFullOn
             // 
@@ -176,11 +175,11 @@
             this.customizationGB.Controls.Add(this.statuslblmaximum);
             this.customizationGB.Controls.Add(this.statuslblminimum);
             this.customizationGB.Controls.Add(this.statuslblsoftonoff);
-            this.customizationGB.Controls.Add(this.trackBar6);
-            this.customizationGB.Controls.Add(this.trackBar5);
-            this.customizationGB.Controls.Add(this.trackBar4);
-            this.customizationGB.Controls.Add(this.trackBar3);
-            this.customizationGB.Controls.Add(this.trackBar2);
+            this.customizationGB.Controls.Add(this.trackDimStep);
+            this.customizationGB.Controls.Add(this.trackPresetOn);
+            this.customizationGB.Controls.Add(this.trackMax);
+            this.customizationGB.Controls.Add(this.trackMin);
+            this.customizationGB.Controls.Add(this.trackSoft);
             this.customizationGB.Controls.Add(this.lbldimstep);
             this.customizationGB.Controls.Add(this.lblpreseton);
             this.customizationGB.Controls.Add(this.lblmaximum);
@@ -238,43 +237,48 @@
             this.statuslblsoftonoff.TabIndex = 18;
             this.statuslblsoftonoff.Text = "label2";
             // 
-            // trackBar6
+            // trackDimStep
             // 
-            this.trackBar6.Location = new System.Drawing.Point(102, 250);
-            this.trackBar6.Name = "trackBar6";
-            this.trackBar6.Size = new System.Drawing.Size(243, 45);
-            this.trackBar6.TabIndex = 17;
+            this.trackDimStep.Location = new System.Drawing.Point(102, 250);
+            this.trackDimStep.Name = "trackDimStep";
+            this.trackDimStep.Size = new System.Drawing.Size(243, 45);
+            this.trackDimStep.TabIndex = 17;
+            this.trackDimStep.Scroll += new System.EventHandler(this.trackDimStep_Scroll);
             // 
-            // trackBar5
+            // trackPresetOn
             // 
-            this.trackBar5.Location = new System.Drawing.Point(102, 199);
-            this.trackBar5.Maximum = 100;
-            this.trackBar5.Name = "trackBar5";
-            this.trackBar5.Size = new System.Drawing.Size(243, 45);
-            this.trackBar5.TabIndex = 16;
+            this.trackPresetOn.Location = new System.Drawing.Point(102, 199);
+            this.trackPresetOn.Maximum = 100;
+            this.trackPresetOn.Name = "trackPresetOn";
+            this.trackPresetOn.Size = new System.Drawing.Size(243, 45);
+            this.trackPresetOn.TabIndex = 16;
+            this.trackPresetOn.Scroll += new System.EventHandler(this.trackPresetOn_Scroll);
             // 
-            // trackBar4
+            // trackMax
             // 
-            this.trackBar4.Location = new System.Drawing.Point(102, 148);
-            this.trackBar4.Maximum = 100;
-            this.trackBar4.Name = "trackBar4";
-            this.trackBar4.Size = new System.Drawing.Size(243, 45);
-            this.trackBar4.TabIndex = 15;
+            this.trackMax.Location = new System.Drawing.Point(102, 148);
+            this.trackMax.Maximum = 100;
+            this.trackMax.Name = "trackMax";
+            this.trackMax.Size = new System.Drawing.Size(243, 45);
+            this.trackMax.TabIndex = 15;
+            this.trackMax.Scroll += new System.EventHandler(this.trackMax_Scroll);
             // 
-            // trackBar3
+            // trackMin
             // 
-            this.trackBar3.Location = new System.Drawing.Point(102, 97);
-            this.trackBar3.Name = "trackBar3";
-            this.trackBar3.Size = new System.Drawing.Size(243, 45);
-            this.trackBar3.TabIndex = 14;
+            this.trackMin.Location = new System.Drawing.Point(102, 97);
+            this.trackMin.Name = "trackMin";
+            this.trackMin.Size = new System.Drawing.Size(243, 45);
+            this.trackMin.TabIndex = 14;
+            this.trackMin.Scroll += new System.EventHandler(this.trackMin_Scroll);
             // 
-            // trackBar2
+            // trackSoft
             // 
-            this.trackBar2.Location = new System.Drawing.Point(102, 46);
-            this.trackBar2.Maximum = 2;
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(243, 45);
-            this.trackBar2.TabIndex = 13;
+            this.trackSoft.Location = new System.Drawing.Point(102, 46);
+            this.trackSoft.Maximum = 2;
+            this.trackSoft.Name = "trackSoft";
+            this.trackSoft.Size = new System.Drawing.Size(243, 45);
+            this.trackSoft.TabIndex = 13;
+            this.trackSoft.Scroll += new System.EventHandler(this.trackSoft_Scroll);
             // 
             // lbldimstep
             // 
@@ -323,7 +327,7 @@
             // 
             // currentVal
             // 
-            this.currentVal.Controls.Add(this.richTextBox1);
+            this.currentVal.Controls.Add(this.DimValTxt);
             this.currentVal.Location = new System.Drawing.Point(263, 25);
             this.currentVal.Name = "currentVal";
             this.currentVal.Size = new System.Drawing.Size(200, 110);
@@ -331,15 +335,14 @@
             this.currentVal.TabStop = false;
             this.currentVal.Text = "Current Value";
             // 
-            // richTextBox1
+            // DimValTxt
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(0, 24);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(200, 86);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "100%";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.DimValTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DimValTxt.Location = new System.Drawing.Point(0, 24);
+            this.DimValTxt.Name = "DimValTxt";
+            this.DimValTxt.Size = new System.Drawing.Size(200, 86);
+            this.DimValTxt.TabIndex = 0;
+            this.DimValTxt.Text = "100%";
             // 
             // ModeGB
             // 
@@ -365,6 +368,7 @@
             this.radDimming.TabStop = true;
             this.radDimming.Text = "Dimming";
             this.radDimming.UseVisualStyleBackColor = true;
+            this.radDimming.CheckedChanged += new System.EventHandler(this.radDimming_CheckedChanged);
             // 
             // radNonDimmingInverted
             // 
@@ -376,6 +380,7 @@
             this.radNonDimmingInverted.TabStop = true;
             this.radNonDimmingInverted.Text = "Non Dimming (Inverted)";
             this.radNonDimmingInverted.UseVisualStyleBackColor = true;
+            this.radNonDimmingInverted.CheckedChanged += new System.EventHandler(this.radNonDimmingInverted_CheckedChanged);
             // 
             // radDisabled
             // 
@@ -387,6 +392,7 @@
             this.radDisabled.TabStop = true;
             this.radDisabled.Text = "Disabled";
             this.radDisabled.UseVisualStyleBackColor = true;
+            this.radDisabled.CheckedChanged += new System.EventHandler(this.radDisabled_CheckedChanged);
             // 
             // radNonDimming
             // 
@@ -398,6 +404,7 @@
             this.radNonDimming.TabStop = true;
             this.radNonDimming.Text = "Non Dimming";
             this.radNonDimming.UseVisualStyleBackColor = true;
+            this.radNonDimming.CheckedChanged += new System.EventHandler(this.radNonDimming_CheckedChanged);
             // 
             // radDimmingInverted
             // 
@@ -409,6 +416,7 @@
             this.radDimmingInverted.TabStop = true;
             this.radDimmingInverted.Text = "Dimming (Inverted)";
             this.radDimmingInverted.UseVisualStyleBackColor = true;
+            this.radDimmingInverted.CheckedChanged += new System.EventHandler(this.radDimmingInverted_CheckedChanged);
             // 
             // btnSaveToDevice
             // 
@@ -418,6 +426,7 @@
             this.btnSaveToDevice.TabIndex = 3;
             this.btnSaveToDevice.Text = "Save Changes To Device";
             this.btnSaveToDevice.UseVisualStyleBackColor = true;
+            this.btnSaveToDevice.Click += new System.EventHandler(this.btnSaveToDevice_Click);
             // 
             // btnSaveChangesToDeviceAndClsoe
             // 
@@ -427,6 +436,7 @@
             this.btnSaveChangesToDeviceAndClsoe.TabIndex = 4;
             this.btnSaveChangesToDeviceAndClsoe.Text = "Save Changes To Device And Close";
             this.btnSaveChangesToDeviceAndClsoe.UseVisualStyleBackColor = true;
+            this.btnSaveChangesToDeviceAndClsoe.Click += new System.EventHandler(this.btnSaveChangesToDeviceAndClsoe_Click);
             // 
             // CancelAndClosee
             // 
@@ -436,6 +446,7 @@
             this.CancelAndClosee.TabIndex = 5;
             this.CancelAndClosee.Text = "Cancel And Close";
             this.CancelAndClosee.UseVisualStyleBackColor = true;
+            this.CancelAndClosee.Click += new System.EventHandler(this.CancelAndClosee_Click);
             // 
             // namelbl
             // 
@@ -497,21 +508,22 @@
             this.Controls.Add(this.GB);
             this.Controls.Add(this.TestingGB);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PropertiesForm";
             this.Text = "PropertiesForm";
             this.Load += new System.EventHandler(this.PropertiesForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackDimVal)).EndInit();
             this.TestingGB.ResumeLayout(false);
             this.TestingGB.PerformLayout();
             this.GB.ResumeLayout(false);
             this.customizationGB.ResumeLayout(false);
             this.customizationGB.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackDimStep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackPresetOn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackSoft)).EndInit();
             this.currentVal.ResumeLayout(false);
             this.ModeGB.ResumeLayout(false);
             this.ModeGB.PerformLayout();
@@ -522,15 +534,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar trackDimVal;
         private System.Windows.Forms.GroupBox TestingGB;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Off;
+        private System.Windows.Forms.Button OnOff;
         private System.Windows.Forms.Button btnFullOn;
         private System.Windows.Forms.GroupBox GB;
         private System.Windows.Forms.GroupBox currentVal;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox DimValTxt;
         private System.Windows.Forms.GroupBox ModeGB;
         private System.Windows.Forms.RadioButton radDimming;
         private System.Windows.Forms.RadioButton radNonDimmingInverted;
@@ -548,11 +560,11 @@
         private System.Windows.Forms.Label statuslblmaximum;
         private System.Windows.Forms.Label statuslblminimum;
         private System.Windows.Forms.Label statuslblsoftonoff;
-        private System.Windows.Forms.TrackBar trackBar6;
-        private System.Windows.Forms.TrackBar trackBar5;
-        private System.Windows.Forms.TrackBar trackBar4;
-        private System.Windows.Forms.TrackBar trackBar3;
-        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.TrackBar trackDimStep;
+        private System.Windows.Forms.TrackBar trackPresetOn;
+        private System.Windows.Forms.TrackBar trackMax;
+        private System.Windows.Forms.TrackBar trackMin;
+        private System.Windows.Forms.TrackBar trackSoft;
         private System.Windows.Forms.Button btnSaveToDevice;
         private System.Windows.Forms.Button btnSaveChangesToDeviceAndClsoe;
         private System.Windows.Forms.Button CancelAndClosee;

@@ -94,6 +94,7 @@ namespace LightingSystemUI
                     startPoint = panel1.PointToClient(pointLine(Cursor.Position));
                 }
                 lineDrawing = true;
+                if (drawTimer.Enabled==false)
                 drawTimer.Enabled = true;
                 lineDrawBegin = false;
                 if (tmpLinePoint.IsEmpty)
