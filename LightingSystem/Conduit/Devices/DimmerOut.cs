@@ -34,7 +34,7 @@ namespace Conduit.Devices
 
         /// <summary>
         /// A value between 0x00 and 0x64.
-        /// 
+        /// The maximum brightness of the light.
         /// </summary>
         public byte MinimumBrightness
         {

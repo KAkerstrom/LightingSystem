@@ -136,3 +136,22 @@ F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\
 F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.exe
 F:\Education\2 Year\1st Semester\ITEC 210 Larry\LightingSystemUI\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.pdb
 C:\Users\kyle.akerstrom\Documents\GitHub\LightingSystem\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.PropertiesForm.resources
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\bin\Debug\LightingSystemUI.exe.config
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\bin\Debug\LightingSystemUI.exe
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\bin\Debug\LightingSystemUI.pdb
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\bin\Debug\Conduit.exe
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\bin\Debug\LightTest.exe
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\bin\Debug\CyUSB.dll
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\bin\Debug\Conduit.pdb
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\bin\Debug\Conduit.exe.config
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\bin\Debug\LightTest.pdb
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\bin\Debug\LightTest.exe.config
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csprojResolveAssemblyReference.cache
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.Form1.resources
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.layoutEditorForm.resources
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.LightIcon.resources
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.PropertiesForm.resources
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.Properties.Resources.resources
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.csproj.GenerateResource.Cache
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.exe
+E:\Kyle Akerstrom\LightingSystem\LightingSystemUI\obj\Debug\LightingSystemUI.pdb

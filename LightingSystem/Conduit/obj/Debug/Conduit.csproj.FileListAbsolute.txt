@@ -24,3 +24,15 @@ C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\Conduit\o
 C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.csproj.CoreCompileInputs.cache
 C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.exe
 C:\Users\jordan.sanders\Documents\GitHub\LightingSystem\LightingSystem\Conduit\obj\Debug\Conduit.pdb
+E:\Kyle Akerstrom\LightingSystem\Conduit\bin\Debug\Conduit.exe.config
+E:\Kyle Akerstrom\LightingSystem\Conduit\bin\Debug\Conduit.exe
+E:\Kyle Akerstrom\LightingSystem\Conduit\bin\Debug\Conduit.pdb
+E:\Kyle Akerstrom\LightingSystem\Conduit\bin\Debug\LightTest.exe
+E:\Kyle Akerstrom\LightingSystem\Conduit\bin\Debug\CyUSB.dll
+E:\Kyle Akerstrom\LightingSystem\Conduit\bin\Debug\LightTest.pdb
+E:\Kyle Akerstrom\LightingSystem\Conduit\bin\Debug\LightTest.exe.config
+E:\Kyle Akerstrom\LightingSystem\Conduit\obj\Debug\Conduit.csprojResolveAssemblyReference.cache
+E:\Kyle Akerstrom\LightingSystem\Conduit\obj\Debug\Conduit.Properties.Resources.resources
+E:\Kyle Akerstrom\LightingSystem\Conduit\obj\Debug\Conduit.csproj.GenerateResource.Cache
+E:\Kyle Akerstrom\LightingSystem\Conduit\obj\Debug\Conduit.exe
+E:\Kyle Akerstrom\LightingSystem\Conduit\obj\Debug\Conduit.pdb
