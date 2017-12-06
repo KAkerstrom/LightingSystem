@@ -274,7 +274,7 @@
             // trackSoft
             // 
             this.trackSoft.Location = new System.Drawing.Point(102, 46);
-            this.trackSoft.Maximum = 2;
+            this.trackSoft.Maximum = 250;
             this.trackSoft.Name = "trackSoft";
             this.trackSoft.Size = new System.Drawing.Size(243, 45);
             this.trackSoft.TabIndex = 13;
