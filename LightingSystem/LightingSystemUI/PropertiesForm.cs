@@ -50,11 +50,13 @@ namespace LightingSystemUI
                     radNonDimmingInverted.Checked = true;
                     break;
             }
+            
             statuslbl.Text = "";
             statuslblminimum.Text = "";
             statuslblmaximum.Text = "";
             statuslblpresetOn.Text = "";
             statuslblDimStep.Text = "";
+
 
         }
         #region EventHandlers
