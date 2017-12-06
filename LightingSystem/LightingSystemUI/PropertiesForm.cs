@@ -4,37 +4,43 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Conduit;
+using Conduit.Devices;
+using Conduit.Enums;
 
 namespace LightingSystemUI
 {
     public partial class PropertiesForm : Form
     {
-        public PropertiesForm()
+        private DimmerOut light;
+        public PropertiesForm(DimmerOut light)
         {
             InitializeComponent();
+            this.light = light;
         }
 
         private void PropertiesForm_Load(object sender, EventArgs e)
         {
-            namelbl.Text = "Name: ";
-            nodelbl.Text = "Node: ";
-            devicelbl.Text = "Device: ";
+            namelbl.Text = "Name: " + light.Name;
+            nodelbl.Text = "Node: " + light.NodeId;
+            devicelbl.Text = "Device: " + light.DeviceId;
             DimValTxt.Text = "";
-            statusTextBox.Text = "";
-            DimValTxt.Text = "" + "%";
-            trackSoft.Value = 0;
-            trackMin.Value = 0;
-            trackMax.Value = 0;
-            trackPresetOn.Value = 0;
-            trackDimStep.Value = 0;
+            statusTextBox.Text = "Done";
+            DimValTxt.Text = light.Brightness + "%";
+            trackSoft.Value = light.SoftOnOff;
+            trackMin.Value = light.MinimumBrightness;
+            trackMax.Value = light.MaximumBrightness;
+            trackPresetOn.Value = light.PresetOn;
+            trackDimStep.Value = light.DimStep;
+            trackDimVal.Value = light.Brightness;
             int i = 0;
-            switch (i)
+            switch (light.Mode)
             {
-                case 0:
+                case 0x00:
                     radDisabled.Checked = true;
                     break;
                 case 1:
@@ -50,8 +56,7 @@ namespace LightingSystemUI
                     radNonDimmingInverted.Checked = true;
                     break;
             }
-            
-            statuslbl.Text = "";
+            statuslblsoftonoff.Text = "";
             statuslblminimum.Text = "";
             statuslblmaximum.Text = "";
             statuslblpresetOn.Text = "";
