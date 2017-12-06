@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Conduit.Nodes
 {
     [Serializable]
-    class TimerRTC : Node
+    public class TimerRTC : Node
     {
         public TimerRTC(byte nodeId) : base(nodeId)
         {

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Conduit
 {
-    public delegate void PongsRecievedDelegate(List<Node> pongs);
+    public delegate void PongsRecievedDelegate(List<Node> pongs, bool complete);
     public delegate void StatusUpdateDelegate(string status);
 
     /// <summary>
@@ -34,6 +34,7 @@ namespace Conduit
 
             CANPing nodePoll = new CANPing(Commands.CmdSysPing, sendList);
             nodePoll.ResponseReceived += NodePoll_PollReceived;
+            PongsReceived?.Invoke(allResponses, false);
         }
 
         private static void NodePoll_PollReceived(List<C4UFX.CANMessage> responses)
@@ -74,6 +75,7 @@ namespace Conduit
 
             CANPing poll = new CANPing(Commands.CmdSysPing, sendList);
             poll.ResponseReceived += DevicePoll_Received;
+            PongsReceived?.Invoke(allResponses, false);
         }
 
         private static void DevicePoll_Received(List<C4UFX.CANMessage> responses)
@@ -119,6 +121,7 @@ namespace Conduit
 
             CANPing poll = new CANPing(Commands.CmdSysEName1, sendList);
             poll.ResponseReceived += Name1Poll_Received;
+            PongsReceived?.Invoke(allResponses, false);
         }
 
         private static void Name1Poll_Received(List<C4UFX.CANMessage> responses)
@@ -155,6 +158,7 @@ namespace Conduit
 
             CANPing poll = new CANPing(Commands.CmdSysEName2, sendList);
             poll.ResponseReceived += Name2Poll_Received;
+            PongsReceived?.Invoke(allResponses, false);
         }
 
         private static void Name2Poll_Received(List<C4UFX.CANMessage> responses)
@@ -186,6 +190,7 @@ namespace Conduit
 
             CANPing poll = new CANPing(Commands.CmdSysEName3, sendList);
             poll.ResponseReceived += Name3Poll_Received;
+            PongsReceived?.Invoke(allResponses, false);
         }
 
         private static void Name3Poll_Received(List<C4UFX.CANMessage> responses)
@@ -216,34 +221,64 @@ namespace Conduit
             }
 
             CANPing poll = new CANPing(Commands.CmdSysEPar, sendList);
-            poll.ResponseReceived += Parameters_Received;
+            poll.ResponseReceived += Parameters1_Received;
+            PongsReceived?.Invoke(allResponses, false);
         }
 
-        private static void Parameters_Received(List<C4UFX.CANMessage> responses)
+        private static void Parameters1_Received(List<C4UFX.CANMessage> responses)
         {
-            StatusUpdate?.Invoke("Poll complete!");
+            StatusUpdate?.Invoke("Querying parameters (2/2)...");
 
             foreach (C4UFX.CANMessage response in responses)
             {
                 FndTnd address = CANInterface.IdToFndTnd(response.ID);
                 for (int i = 0; i < response.DLC - 1; i++)
                     if (address.FromDevice == 0)
-                        allResponses.First(x => x.NodeId == address.FromNode).Parameters[i] = response.Data[i + 1];
+                        allResponses.First(x => x.NodeId == address.FromNode).Parameters1[i] = response.Data[i + 1];
                     else
-                        allResponses.First(x => x.NodeId == address.FromNode).Devices.First(x => x.DeviceId == address.FromDevice).Parameters[i] = response.Data[i + 1];
+                        allResponses.First(x => x.NodeId == address.FromNode).Devices.First(x => x.DeviceId == address.FromDevice).Parameters1[i] = response.Data[i + 1];
             }
 
-            //Dictionary<byte, List<byte>> sendList = new Dictionary<byte, List<byte>>();
-            //foreach (Node node in allResponses)
-            //{
-            //    if (sendList.Keys.Contains(node.NodeId))
-            //        break;
-            //    sendList.Add(node.NodeId, new List<byte>());
-            //    foreach (Device device in node.Devices)
-            //        sendList[node.NodeId].Add(device.DeviceId);
-            //}
+            Dictionary<byte, List<byte>> sendList = new Dictionary<byte, List<byte>>();
+            foreach (Node node in allResponses)
+            {
+                if (sendList.Keys.Contains(node.NodeId))
+                    break;
+                sendList.Add(node.NodeId, new List<byte>());
+                foreach (Device device in node.Devices)
+                    sendList[node.NodeId].Add(device.DeviceId);
+            }
 
-            PongsReceived?.Invoke(allResponses);
+            CANPing poll = new CANPing(Commands.CmdSysEPar2, sendList);
+            poll.ResponseReceived += Parameters2_Received;
+            PongsReceived?.Invoke(allResponses, false);
+        }
+
+        private static void Parameters2_Received(List<C4UFX.CANMessage> responses)
+        {
+            StatusUpdate?.Invoke("Poll Complete!");
+
+            foreach (C4UFX.CANMessage response in responses)
+            {
+                FndTnd address = CANInterface.IdToFndTnd(response.ID);
+                for (int i = 0; i < response.DLC - 1; i++)
+                    if (address.FromDevice == 0)
+                        allResponses.First(x => x.NodeId == address.FromNode).Parameters2[i] = response.Data[i + 1];
+                    else
+                        allResponses.First(x => x.NodeId == address.FromNode).Devices.First(x => x.DeviceId == address.FromDevice).Parameters2[i] = response.Data[i + 1];
+            }
+
+            Dictionary<byte, List<byte>> sendList = new Dictionary<byte, List<byte>>();
+            foreach (Node node in allResponses)
+            {
+                if (sendList.Keys.Contains(node.NodeId))
+                    break;
+                sendList.Add(node.NodeId, new List<byte>());
+                foreach (Device device in node.Devices)
+                    sendList[node.NodeId].Add(device.DeviceId);
+            }
+
+            PongsReceived?.Invoke(allResponses, true);
         }
     }
 }

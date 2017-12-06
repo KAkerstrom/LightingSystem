@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace Conduit
 {
-        /// <summary>
-        /// Occurs when the brightness is changed.
-        /// </summary>
-        /// <param name="brightness">The brightness.</param>
-        public delegate void BrightnessChangedDelegate(byte brightness);
+    /// <summary>
+    /// Occurs when the brightness is changed.
+    /// </summary>
+    /// <param name="brightness">The brightness.</param>
+    public delegate void BrightnessChangedDelegate(byte brightness);
 
     [Serializable]
     public abstract class Light : Device, IDeserialize
@@ -18,6 +18,7 @@ namespace Conduit
         /// <summary>
         /// Occurs when [brightness changed].
         /// </summary>
+        [field: NonSerialized]
         public event BrightnessChangedDelegate BrightnessChanged;
 
         private byte brightness;

@@ -16,9 +16,12 @@ namespace LightingSystemUI
     public partial class Form1 : Form
     {
         #region init
+
         string[] bitmaps, layouts;
         int filecharcount;
-        List<Node> allNodes = new List<Node>();
+        List<Entity> allNodes = new List<Entity>();
+        List<LightIcon> icons = new List<LightIcon>();
+
         #endregion  
 
         #region Constructor
@@ -70,7 +73,7 @@ namespace LightingSystemUI
                 using (Stream stream = File.Open("NodeDevices.bin", FileMode.Open))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
-                    allNodes = (List<Node>)bin.Deserialize(stream);
+                    allNodes = (List<Entity>)bin.Deserialize(stream);
 
                     foreach (Node node in allNodes)
                         foreach (Device device in node.Devices)
@@ -99,20 +102,49 @@ namespace LightingSystemUI
             statusLbl.Text = status;
         }
 
-        private void Poll_PongsReceived(List<Node> pongs)
+        private void Poll_PongsReceived(List<Node> pongs, bool complete)
         {
-            allNodes = pongs;
+            foreach (Node node in pongs)
+            {
+                Node foundNode = (Node)allNodes.FirstOrDefault(x => x.NodeId == node.NodeId && x.DeviceId == node.DeviceId);
+                if (foundNode != null)
+                    foundNode = node;
+                else
+                    allNodes.Add(node);
+            }
 
             foreach (Node node in allNodes)
                 foreach (Device device in node.Devices)
-                {
                     if (device is Light)
                     {
-                        LightIcon icon = new LightIcon(IconToolbox, this);
-                        icon.thisLight = (Light)device;
+                        LightIcon icon = icons.FirstOrDefault(x => x.thisLight.NodeId == device.NodeId && x.thisLight.DeviceId == device.DeviceId);
+                        if (icon != null)
+                            icon.thisLight = (Light)device;
+                        else
+                        {
+                            LightIcon newIcon = new LightIcon(IconToolbox, this);
+                            newIcon.thisLight = (Light)device;
+                            icons.Add(newIcon);
+                        }
+                    }
+
+            if (complete)
+            {
+                try
+                {
+                    using (Stream stream = File.Open("NodeDevices.bin", FileMode.Create))
+                    {
+                        BinaryFormatter bf = new BinaryFormatter();
+                        bf.Serialize(stream, allNodes);
                     }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
+
         #endregion
 
         #region Buttons\form events
