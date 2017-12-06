@@ -266,6 +266,7 @@
             // trackMin
             // 
             this.trackMin.Location = new System.Drawing.Point(102, 97);
+            this.trackMin.Maximum = 100;
             this.trackMin.Name = "trackMin";
             this.trackMin.Size = new System.Drawing.Size(243, 45);
             this.trackMin.TabIndex = 14;
