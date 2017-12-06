@@ -16,8 +16,8 @@ namespace Conduit
         protected string name = string.Empty.PadRight(7 * 3);
         protected byte nodeId;
         protected byte deviceId;
-        protected byte[] parameters = new byte[14] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-        private CANPing ping;
+        protected byte[] parameters1 = new byte[7] { 0, 0, 0, 0, 0, 0, 0};
+        protected byte[] parameters2 = new byte[7] { 0, 0, 0, 0, 0, 0, 0};
 
         public string Name
         {
@@ -43,34 +43,49 @@ namespace Conduit
         }
 
         /// <summary>
-        /// A raw byte array of 16 parameters, unique to each device.
+        /// A raw byte array of 7 parameters, unique to each device.
         /// </summary>
-        public byte[] Parameters
+        public byte[] Parameters1
         {
-            get { return parameters; }
+            get { return parameters1; }
             set
             {
-                if (parameters != value)
+                if (parameters1 != value)
                     ParametersChanged?.Invoke();
 
-                parameters = value;
+                parameters1 = value;
             }
         }
 
-        public void GetParameters()
+        /// <summary>
+        /// A raw byte array of 7 parameters, unique to each device.
+        /// </summary>
+        public byte[] Parameters2
         {
-            ping = new CANPing(Commands.CmdSysEPar, nodeId, DeviceId);
-            ping.ResponseReceived += Ping_ParameterReceived;
+            get { return parameters2; }
+            set
+            {
+                if (parameters2 != value)
+                    ParametersChanged?.Invoke();
+
+                parameters2 = value;
+            }
         }
 
-        private void Ping_ParameterReceived(List<C4UFX.CANMessage> responses)
-        {
-            if (responses.Count == 1)
-                for (int i = 0; i < 7; i++)
-                    Parameters[i] = responses[0].Data[i + 1];
+        //public void GetParameters()
+        //{
+        //    ping = new CANPing(Commands.CmdSysEPar, nodeId, DeviceId);
+        //    ping.ResponseReceived += Ping_ParameterReceived;
+        //}
 
-            ping.ResponseReceived -= Ping_ParameterReceived;
-        }
+        //private void Ping_ParameterReceived(List<C4UFX.CANMessage> responses)
+        //{
+        //    if (responses.Count == 1)
+        //        for (int i = 0; i < 7; i++)
+        //            Parameters[i] = responses[0].Data[i + 1];
+
+        //    ping.ResponseReceived -= Ping_ParameterReceived;
+        //}
 
         public bool SetNamePart(string name, int section)
         {

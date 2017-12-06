@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Conduit.Nodes
 {
     [Serializable]
-    class ACDimmer : Node
+    public class ACDimmer : Node
     {
         public ACDimmer(byte nodeId) : base(nodeId)
         {

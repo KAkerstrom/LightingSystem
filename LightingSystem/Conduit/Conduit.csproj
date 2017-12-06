@@ -61,6 +61,7 @@
     <Compile Include="Enums\CANStatEnum.cs" />
     <Compile Include="Enums\CommandsEnum.cs" />
     <Compile Include="Enums\DataEnum.cs" />
+    <Compile Include="Enums\DimmerModeEnum.cs" />
     <Compile Include="Enums\FiltersEnum.cs" />
     <Compile Include="Enums\SignaturesEnum.cs" />
     <Compile Include="Enums\WarningEnum.cs" />

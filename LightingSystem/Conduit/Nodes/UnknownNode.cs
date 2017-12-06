@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Conduit.Nodes
 {
     [Serializable]
-    class UnknownNode : Node
+    public class UnknownNode : Node
     {
         public UnknownNode(byte nodeId) : base(nodeId)
         {
