@@ -109,7 +109,6 @@
             this.btnLoadLayoutFromFile.Name = "btnLoadLayoutFromFile";
             this.btnLoadLayoutFromFile.Size = new System.Drawing.Size(183, 22);
             this.btnLoadLayoutFromFile.Text = "Load layout in editor";
-            this.btnLoadLayoutFromFile.Click += new System.EventHandler(this.btnLoadLayoutFromFile_Click);
             // 
             // bitmappanel
             // 

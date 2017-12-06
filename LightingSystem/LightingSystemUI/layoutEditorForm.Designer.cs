@@ -142,7 +142,6 @@
             0,
             0,
             0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // layoutEditorForm
             // 
@@ -163,7 +162,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.layoutEditorForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.layoutEditorForm_FormClosed);
             this.Click += new System.EventHandler(this.layoutEditorForm_Click);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.layoutEditorForm_Paint);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

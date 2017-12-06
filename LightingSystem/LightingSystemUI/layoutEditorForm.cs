@@ -16,53 +16,48 @@ namespace LightingSystemUI
 
     public partial class layoutEditorForm : Form
     {
-        int pointToValue;
-        string Oleg = "Shkliaiev";
-        long olegMoney = 1000000000;
-        string WEGETITTOWORK = "FUCKOFF";
-        string WEGETITTOWORK2 = "DURNFURNT THAMS";
         [Serializable()]
+
+        #region init
         public struct FloorPlan
         {
             public List<Rectangle> rectList;
             public List<Tuple<Point, Point>> lines;
             public List<Dictionary<string, Point>> ListRectCorners;
         }
-        
-        private static Timer myTimer;
+
+        static Timer drawTimer;
         //Lists of lines and rectangles(rooms)
-        public static List<Rectangle> Rooms = new List<Rectangle>();
-        public static List<Tuple<Point, Point>> myListOfLines = new List<Tuple<Point, Point>>();
+        static List<Rectangle> drawnRectangles = new List<Rectangle>();
+        static List<Tuple<Point, Point>> drawnLines = new List<Tuple<Point, Point>>();
         //temporary values for drawing rectangles(rooms) and lines
-        public static Tuple<Point, Point> myLine;
-        public Rectangle rectTmp;
+        static Tuple<Point, Point> tmpLine;
+        Rectangle tmpRectangle;
         public Dictionary<string, Point> RectangleCorners;
         public List<Dictionary<string, Point>> ListRectCorners = new List<Dictionary<string, Point>>();
         //bools for rectangles(rooms)
-        public bool rectDrawBegin = false;
-        public bool rectDrawing = false;
-        
-        
-        //bools for lines
-        Point pnt, dest, prevdest;
-        bool lineDrawBegin = false;
-        bool lineDrawing = false;
+        bool rectDrawBegin, rectDrawing = false;
+        //bools for lines       
+        bool lineDrawBegin, lineDrawing = false;
         //used for both rectangles and lines
-        Point currentPoint;
-        Point startPoint, endPoint;
+        Point currentPoint, startPoint, endPoint;
+        Point tmpLinePoint, tmpLineDest, tmpLinePrevdest;
+        int lineSnapDistance = 50;
 
         Bitmap tmpBitmap;
+        #endregion
+
+        #region Constructors
         public layoutEditorForm(string fileName)
         {
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             this.SetStyle(ControlStyles.UserPaint, true);
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
-            myTimer = new Timer();
-            myTimer.Interval = 1;
-            myTimer.Tick += MyTimer_Tick;
-            LoadLayOut(fileName);
-            pointToValue = 50;
+            drawTimer = new Timer();
+            drawTimer.Interval = 1;
+            drawTimer.Tick += MyTimer_Tick;
+            LoadGeometry(fileName);
         }
         public layoutEditorForm()
         {
@@ -70,124 +65,166 @@ namespace LightingSystemUI
             this.SetStyle(ControlStyles.UserPaint, true);
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
-            myTimer = new Timer();
-            myTimer.Interval = 1;
-            myTimer.Tick += MyTimer_Tick;
-            pointToValue = 50;
+            drawTimer = new Timer();
+            drawTimer.Interval = 1;
+            drawTimer.Tick += MyTimer_Tick;
         }
-        private void MyTimer_Tick(object sender, EventArgs e)
-        {
+        #endregion
 
-            if (rectDrawing)
-            {
-
-                ControlPaint.DrawReversibleFrame(rectTmp, Color.Black, FrameStyle.Dashed);
-                int width = (Cursor.Position).X - currentPoint.X;
-                int height = (Cursor.Position).Y - currentPoint.Y;
-                rectTmp = new Rectangle(currentPoint.X, currentPoint.Y, width, height);
-                ControlPaint.DrawReversibleFrame(rectTmp, Color.Black, FrameStyle.Dashed);
-
-            }
-
-            else if (lineDrawing)
-            {
-
-                dest = new Point((Cursor.Position).X, (Cursor.Position).Y);
-                if (!prevdest.IsEmpty)
-                    DrawLine(pnt, prevdest);
-                DrawLine(pnt, dest);
-                prevdest = new Point(dest.X, dest.Y);
-
-            }
-
-            panel1.Invalidate();
-        }
-
-        private void DrawLine(Point start, Point end)
-        {
-            ControlPaint.DrawReversibleLine(start, end, Color.Black);
-        }
-
-        private void layoutEditorForm_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void layoutEditorForm_Click(object sender, EventArgs e)
-        {
-            if (rectDrawBegin == true)
-            {
-                lblError.Text = "You must draw the rectangle within the white panel";
-                lblError.Visible = true;
-            }
-            else if (lineDrawBegin == true)
-            {
-                lblError.Text = "You must draw the line within the white panel";
-                lblError.Visible = true;
-            }
-            else
-                lblError.Visible = false;
-        }
-
-
+        #region panelEvents
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             startPoint = Cursor.Position;
-            if (rectDrawBegin == true)
+            if (rectDrawBegin) //change rectangle bools, set temp values for rectangle drawing
             {
-                myTimer.Enabled = true;
-                currentPoint = (Cursor.Position);
-                rectTmp.X = currentPoint.X;
-                rectTmp.Y = currentPoint.Y;
+                drawTimer.Enabled = true;
+                currentPoint = Cursor.Position;
+                tmpRectangle.X = currentPoint.X;
+                tmpRectangle.Y = currentPoint.Y;
                 rectDrawBegin = false;
                 lblError.Visible = false;
                 rectDrawing = true;
             }
-            else { }
+            else
 
-            if (lineDrawBegin == true)
+            if (lineDrawBegin)//change line bools, set temp values for line drawing
             {
-                if (Rooms.Count != 0)
+                if (drawnRectangles.Count != 0)
                 {
                     startPoint = panel1.PointToClient(pointLine(Cursor.Position));
                 }
                 lineDrawing = true;
-                myTimer.Enabled = true;
+                drawTimer.Enabled = true;
                 lineDrawBegin = false;
-                if (pnt.IsEmpty)
-                    pnt = new Point(Cursor.Position.X, Cursor.Position.Y);
+                if (tmpLinePoint.IsEmpty)
+                    tmpLinePoint = new Point(Cursor.Position.X, Cursor.Position.Y);
 
             }
         }
 
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            endPoint = Cursor.Position;
+            if (rectDrawing)
+            {
+                // Draw rectangle based on current cursor position and previous temp values, record and store rect corner co-ordinates
+                rectDrawing = false;
+                tmpRectangle.X = panel1.PointToClient(tmpRectangle.Location).X;
+                tmpRectangle.Y = panel1.PointToClient(tmpRectangle.Location).Y;
+                tmpRectangle.Width = (panel1.PointToClient(Cursor.Position).X - tmpRectangle.X);
+                tmpRectangle.Height = (panel1.PointToClient(Cursor.Position).Y - tmpRectangle.Y);
+
+                if ((tmpRectangle.Width > 0) && (tmpRectangle.Height > 0))
+                    drawnRectangles.Add(tmpRectangle);
+                RectangleCorners = new Dictionary<string, Point>();
+                RectangleCorners.Add("TopRight", new Point(tmpRectangle.Location.X + tmpRectangle.Width, tmpRectangle.Location.Y));
+                RectangleCorners.Add("BottomLeft", new Point(tmpRectangle.Location.X, tmpRectangle.Location.Y + tmpRectangle.Height));
+                RectangleCorners.Add("BottomRight", new Point(tmpRectangle.Location.X + tmpRectangle.Width, tmpRectangle.Location.Y + tmpRectangle.Height));
+                RectangleCorners.Add("TopLeft", new Point(tmpRectangle.Location.X, tmpRectangle.Location.Y));
+                ListRectCorners.Add(RectangleCorners);
+
+                // Draw rectangle based on where temp rectangle values are compared to cursor
+                if ((tmpRectangle.Width > 0) && (tmpRectangle.Height < 0))
+                {
+                    tmpRectangle.Y += tmpRectangle.Height;
+                    tmpRectangle.Height *= -1;
+                    drawnRectangles.Add(tmpRectangle);
+                }
+                if ((tmpRectangle.Width < 0) && (tmpRectangle.Height > 0))
+                {
+                    tmpRectangle.X += tmpRectangle.Width;
+                    tmpRectangle.Width *= -1;
+                    drawnRectangles.Add(tmpRectangle);
+                }
+                if ((tmpRectangle.Width < 0) && (tmpRectangle.Height < 0))
+                {
+                    tmpRectangle.X += tmpRectangle.Width;
+                    tmpRectangle.Width *= -1;
+                    tmpRectangle.Y += tmpRectangle.Height;
+                    tmpRectangle.Height *= -1;
+                    drawnRectangles.Add(tmpRectangle);
+                }
+                drawTimer.Enabled = false;
+            }
+
+            if (lineDrawing)
+            // Draw line based on current cursor position and previous temp values
+            {
+                drawTimer.Enabled = false;
+                tmpLinePoint = panel1.PointToClient(Cursor.Position);
+                if (drawnRectangles.Count != 0)
+                    tmpLine = new Tuple<Point, Point>(startPoint, panel1.PointToClient(pointLine(endPoint)));
+                else
+                    tmpLine = new Tuple<Point, Point>(panel1.PointToClient(startPoint), panel1.PointToClient(endPoint));
+
+                drawnLines.Add(tmpLine);
+                lineDrawing = false;
+                tmpLinePrevdest = Point.Empty;
+                tmpLinePoint = Point.Empty;
+            }
+
+            panel1.Invalidate();
+            this.Cursor = Cursors.Default;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (Tuple<Point, Point> tmp in drawnLines)
+                e.Graphics.DrawLine(Pens.Black, tmp.Item1, tmp.Item2);
+
+            foreach (Rectangle tmp in drawnRectangles)
+                e.Graphics.DrawRectangle(Pens.Black, tmp);
+        }
+
+        #endregion
+
+        #region methods
+
+        private void DrawReversibleRectangle()
+        {
+            ControlPaint.DrawReversibleFrame(tmpRectangle, Color.Black, FrameStyle.Dashed);
+            int width = (Cursor.Position).X - currentPoint.X;
+            int height = (Cursor.Position).Y - currentPoint.Y;
+            tmpRectangle = new Rectangle(currentPoint.X, currentPoint.Y, width, height);
+            ControlPaint.DrawReversibleFrame(tmpRectangle, Color.Black, FrameStyle.Dashed);
+        }
+
+        private void DrawReversibleLine()
+        {
+            tmpLineDest = new Point((Cursor.Position).X, (Cursor.Position).Y);
+            if (!tmpLinePrevdest.IsEmpty)
+                ControlPaint.DrawReversibleLine(tmpLinePoint, tmpLinePrevdest, Color.Black);
+            ControlPaint.DrawReversibleLine(tmpLinePoint, tmpLineDest, Color.Black);
+            tmpLinePrevdest = new Point(tmpLineDest.X, tmpLineDest.Y);
+        }
         private Point pointLine(Point point)
         {
-            for (int rectInd = 0; rectInd < Rooms.Count; rectInd++)
+            for (int rectInd = 0; rectInd < drawnRectangles.Count; rectInd++)
             {
 
-                if ((Math.Abs(point.X - ((ListRectCorners[rectInd]["TopLeft"].X) + this.Location.X + panel1.Location.X)) <= pointToValue) &&
-                    (Math.Abs(point.Y - ((ListRectCorners[rectInd]["TopLeft"].Y) + this.Location.Y + panel1.Location.Y)) <= pointToValue))
+                if ((Math.Abs(point.X - ((ListRectCorners[rectInd]["TopLeft"].X) + this.Location.X + panel1.Location.X)) <= lineSnapDistance) &&
+                    (Math.Abs(point.Y - ((ListRectCorners[rectInd]["TopLeft"].Y) + this.Location.Y + panel1.Location.Y)) <= lineSnapDistance))
                 {
                     point = new Point(ListRectCorners[rectInd]["TopLeft"].X + this.Location.X + panel1.Location.X,
                         ListRectCorners[rectInd]["TopLeft"].Y + this.Location.Y + panel1.Location.Y);
                     point = new Point(Math.Abs(point.X) + 8, Math.Abs(point.Y) + 31);
                 }
-                else if ((Math.Abs(point.X - ((ListRectCorners[rectInd]["TopRight"].X) + this.Location.X + panel1.Location.X)) <= pointToValue) &&
-                  (Math.Abs(point.Y - ((ListRectCorners[rectInd]["TopRight"].Y) + this.Location.Y + panel1.Location.Y)) <= pointToValue))
+                else if ((Math.Abs(point.X - ((ListRectCorners[rectInd]["TopRight"].X) + this.Location.X + panel1.Location.X)) <= lineSnapDistance) &&
+                  (Math.Abs(point.Y - ((ListRectCorners[rectInd]["TopRight"].Y) + this.Location.Y + panel1.Location.Y)) <= lineSnapDistance))
                 {
                     point = new Point(ListRectCorners[rectInd]["TopRight"].X + this.Location.X + panel1.Location.X,
                         ListRectCorners[rectInd]["TopRight"].Y + this.Location.Y + panel1.Location.Y);
                     point = new Point(Math.Abs(point.X) + 8, Math.Abs(point.Y) + 31);
                 }
-                else if ((Math.Abs(point.X - ((ListRectCorners[rectInd]["BottomLeft"].X) + this.Location.X + panel1.Location.X)) <= pointToValue) &&
-                  (Math.Abs(point.Y - ((ListRectCorners[rectInd]["BottomLeft"].Y) + this.Location.Y + panel1.Location.Y)) <= pointToValue))
+                else if ((Math.Abs(point.X - ((ListRectCorners[rectInd]["BottomLeft"].X) + this.Location.X + panel1.Location.X)) <= lineSnapDistance) &&
+                  (Math.Abs(point.Y - ((ListRectCorners[rectInd]["BottomLeft"].Y) + this.Location.Y + panel1.Location.Y)) <= lineSnapDistance))
                 {
                     point = new Point(ListRectCorners[rectInd]["BottomLeft"].X + this.Location.X + panel1.Location.X,
                         ListRectCorners[rectInd]["BottomLeft"].Y + this.Location.Y + panel1.Location.Y);
                     point = new Point(Math.Abs(point.X) + 8, Math.Abs(point.Y) + 31);
                 }
-                else if ((Math.Abs(point.X - ((ListRectCorners[rectInd]["BottomRight"].X) + this.Location.X + panel1.Location.X)) <= pointToValue) &&
-                 (Math.Abs(point.Y - ((ListRectCorners[rectInd]["BottomRight"].Y) + this.Location.Y + panel1.Location.Y)) <= pointToValue))
+                else if ((Math.Abs(point.X - ((ListRectCorners[rectInd]["BottomRight"].X) + this.Location.X + panel1.Location.X)) <= lineSnapDistance) &&
+                 (Math.Abs(point.Y - ((ListRectCorners[rectInd]["BottomRight"].Y) + this.Location.Y + panel1.Location.Y)) <= lineSnapDistance))
                 {
                     point = new Point(ListRectCorners[rectInd]["BottomRight"].X + this.Location.X + panel1.Location.X,
                         ListRectCorners[rectInd]["BottomRight"].Y + this.Location.Y + panel1.Location.Y);
@@ -195,126 +232,58 @@ namespace LightingSystemUI
                 }
                 else
                 { //ONLY CHECK FOR SIDE IF STATEMENT SHOULD CONCIDER HEIGHT FOR X AXIS, AND WIDTH FOR Y AXIS
-                    if ((Math.Abs(point.X - (Rooms[rectInd].Location.X + this.Location.X + panel1.Location.X)) <= pointToValue) && 
-                        ((point.Y >= (Rooms[rectInd].Location.Y + this.Location.Y + panel1.Location.Y) && (point.Y <= (Rooms[rectInd].Location.Y + Rooms[rectInd].Height + this.Location.Y + panel1.Location.Y)))))
+                    if ((Math.Abs(point.X - (drawnRectangles[rectInd].Location.X + this.Location.X + panel1.Location.X)) <= lineSnapDistance) &&
+                        ((point.Y >= (drawnRectangles[rectInd].Location.Y + this.Location.Y + panel1.Location.Y) && (point.Y <= (drawnRectangles[rectInd].Location.Y + drawnRectangles[rectInd].Height + this.Location.Y + panel1.Location.Y)))))
                     {
-                        point = new Point(Rooms[rectInd].Location.X + this.Location.X + panel1.Location.X + 8, Cursor.Position.Y);
+                        point = new Point(drawnRectangles[rectInd].Location.X + this.Location.X + panel1.Location.X + 8, Cursor.Position.Y);
                         point = new Point(Math.Abs(point.X), Math.Abs(point.Y));
                     }
-                    else if ((Math.Abs(point.X - (Rooms[rectInd].Location.X + Rooms[rectInd].Width + this.Location.X + panel1.Location.X)) <= pointToValue) &&
-                        ((point.Y >= (Rooms[rectInd].Location.Y + this.Location.Y + panel1.Location.Y) && (point.Y <= (Rooms[rectInd].Location.Y + Rooms[rectInd].Height + this.Location.Y + panel1.Location.Y)))))
+                    else if ((Math.Abs(point.X - (drawnRectangles[rectInd].Location.X + drawnRectangles[rectInd].Width + this.Location.X + panel1.Location.X)) <= lineSnapDistance) &&
+                        ((point.Y >= (drawnRectangles[rectInd].Location.Y + this.Location.Y + panel1.Location.Y) && (point.Y <= (drawnRectangles[rectInd].Location.Y + drawnRectangles[rectInd].Height + this.Location.Y + panel1.Location.Y)))))
                     {
-                        point = new Point(Rooms[rectInd].Location.X + this.Location.X + panel1.Location.X + 8 + Rooms[rectInd].Width, Cursor.Position.Y);
+                        point = new Point(drawnRectangles[rectInd].Location.X + this.Location.X + panel1.Location.X + 8 + drawnRectangles[rectInd].Width, Cursor.Position.Y);
                         point = new Point(Math.Abs(point.X), Math.Abs(point.Y));
                     }
-                    else if ((Math.Abs(point.Y - (Rooms[rectInd].Location.Y + this.Location.Y + panel1.Location.Y)) <= pointToValue) &&
-                        ((point.X >= (Rooms[rectInd].Location.X + this.Location.X + panel1.Location.X) && (point.X <= (Rooms[rectInd].Location.X + Rooms[rectInd].Width + this.Location.X + panel1.Location.X)))))
+                    else if ((Math.Abs(point.Y - (drawnRectangles[rectInd].Location.Y + this.Location.Y + panel1.Location.Y)) <= lineSnapDistance) &&
+                        ((point.X >= (drawnRectangles[rectInd].Location.X + this.Location.X + panel1.Location.X) && (point.X <= (drawnRectangles[rectInd].Location.X + drawnRectangles[rectInd].Width + this.Location.X + panel1.Location.X)))))
                     {
-                        point = new Point(Cursor.Position.X, Rooms[rectInd].Location.Y + this.Location.Y + panel1.Location.Y + 31);
+                        point = new Point(Cursor.Position.X, drawnRectangles[rectInd].Location.Y + this.Location.Y + panel1.Location.Y + 31);
                         point = new Point(Math.Abs(point.X), Math.Abs(point.Y));
                     }
-                    else if ((Math.Abs(point.Y - (Rooms[rectInd].Location.Y + Rooms[rectInd].Height + this.Location.Y + panel1.Location.Y)) <= pointToValue) &&
-                        ((point.X >= (Rooms[rectInd].Location.X + this.Location.X + panel1.Location.X) && (point.X <= (Rooms[rectInd].Location.X + Rooms[rectInd].Width + this.Location.X + panel1.Location.X)))))
+                    else if ((Math.Abs(point.Y - (drawnRectangles[rectInd].Location.Y + drawnRectangles[rectInd].Height + this.Location.Y + panel1.Location.Y)) <= lineSnapDistance) &&
+                        ((point.X >= (drawnRectangles[rectInd].Location.X + this.Location.X + panel1.Location.X) && (point.X <= (drawnRectangles[rectInd].Location.X + drawnRectangles[rectInd].Width + this.Location.X + panel1.Location.X)))))
                     {
-                        point = new Point(Cursor.Position.X, Rooms[rectInd].Height + Rooms[rectInd].Location.Y + this.Location.Y + panel1.Location.Y + 30);
+                        point = new Point(Cursor.Position.X, drawnRectangles[rectInd].Height + drawnRectangles[rectInd].Location.Y + this.Location.Y + panel1.Location.Y + 30);
                         point = new Point(Math.Abs(point.X), Math.Abs(point.Y));
                     }
                 }
             }
             return point;
         }
-        private void panel1_MouseUp(object sender, MouseEventArgs e)
+
+        private void SaveGeometry(string fileName)
         {
-            endPoint = Cursor.Position;
-            if (rectDrawing == true)
+            FloorPlan floorPlan = new FloorPlan();
+            floorPlan.lines = drawnLines;
+            floorPlan.rectList = drawnRectangles;
+            floorPlan.ListRectCorners = ListRectCorners;
+            try
             {
-
-                rectDrawing = false;
-                rectTmp.X = panel1.PointToClient(rectTmp.Location).X;
-                rectTmp.Y = panel1.PointToClient(rectTmp.Location).Y;
-                rectTmp.Width = (panel1.PointToClient(Cursor.Position).X - rectTmp.X);
-                rectTmp.Height = (panel1.PointToClient(Cursor.Position).Y - rectTmp.Y);
-
-                if ((rectTmp.Width > 0) && (rectTmp.Height > 0))
-                    Rooms.Add(rectTmp);
-                RectangleCorners = new Dictionary<string, Point>();
-                RectangleCorners.Add("TopRight", new Point(rectTmp.Location.X + rectTmp.Width, rectTmp.Location.Y));
-                RectangleCorners.Add("BottomLeft", new Point(rectTmp.Location.X, rectTmp.Location.Y + rectTmp.Height));
-                RectangleCorners.Add("BottomRight", new Point(rectTmp.Location.X + rectTmp.Width, rectTmp.Location.Y + rectTmp.Height));
-                RectangleCorners.Add("TopLeft", new Point(rectTmp.Location.X, rectTmp.Location.Y));
-                ListRectCorners.Add(RectangleCorners);
-
-
-                if ((rectTmp.Width > 0) && (rectTmp.Height < 0))
+                using (Stream stream = File.Open("./Layouts/serialized/" + fileName + ".bin", FileMode.Create))
                 {
-                    rectTmp.Y += rectTmp.Height;
-                    rectTmp.Height *= -1;
-                    Rooms.Add(rectTmp);
-                }
-                if ((rectTmp.Width < 0) && (rectTmp.Height > 0))
-                {
-                    rectTmp.X += rectTmp.Width;
-                    rectTmp.Width *= -1;
-                    Rooms.Add(rectTmp);
-                }
-                if ((rectTmp.Width < 0) && (rectTmp.Height < 0))
-                {
-                    rectTmp.X += rectTmp.Width;
-                    rectTmp.Width *= -1;
-                    rectTmp.Y += rectTmp.Height;
-                    rectTmp.Height *= -1;
-                    Rooms.Add(rectTmp);
-                }
-                myTimer.Enabled = false;
-
-            }
-            if (lineDrawing == true)
-            {
-                if (Rooms.Count != 0)
-                {
-                    myTimer.Enabled = false;
-                    pnt = panel1.PointToClient(Cursor.Position);
-                    myLine = new Tuple<Point, Point>(startPoint, panel1.PointToClient(pointLine(endPoint)));
-                    myListOfLines.Add(myLine);
-                    lineDrawing = false;
-                    prevdest = Point.Empty;
-                    pnt = Point.Empty;
-                }
-                else
-                {
-                    myTimer.Enabled = false;
-                    pnt = panel1.PointToClient(Cursor.Position);
-                    myLine = new Tuple<Point, Point>(panel1.PointToClient(startPoint), panel1.PointToClient(endPoint));
-                    myListOfLines.Add(myLine);
-                    lineDrawing = false;
-                    prevdest = Point.Empty;
-                    pnt = Point.Empty;
+                    BinaryFormatter bf = new BinaryFormatter();
+                    bf.Serialize(stream, floorPlan);
                 }
             }
-            panel1.Invalidate();
-            this.Cursor = Cursors.Default;
+            catch (IOException ex)
+            { MessageBox.Show("Error: {" + ex.Message + "}"); }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void SavePanelAsBitmap(Panel panel)
         {
-
-            foreach (Tuple<Point, Point> tmp in myListOfLines)
-            {
-                e.Graphics.DrawLine(Pens.Black, tmp.Item1, tmp.Item2);
-            }
-
-            foreach (Rectangle tmp in Rooms)
-            {
-                e.Graphics.DrawRectangle(Pens.Black, tmp);
-            }
-        }
-
-        private void btnSaveLayout_Click(object sender, EventArgs e)
-        {
-            tmpBitmap = new Bitmap(panel1.Width, panel1.Height);
-            panel1.DrawToBitmap(tmpBitmap, panel1.ClientRectangle);
-            string input = Interaction.InputBox("Enter Name Of The File for Your Personal Floor Plan",
-                "Enter Name for your FloorPlan", "Default", -1, -1);
+            tmpBitmap = new Bitmap(panel.Width, panel.Height);
+            panel.DrawToBitmap(tmpBitmap, panel.ClientRectangle);
+            string input = Interaction.InputBox("Enter a name for your floor plan", "Name your floor plan", "default", -1, -1);
             try
             {
                 using (MemoryStream memory = new MemoryStream())
@@ -326,19 +295,14 @@ namespace LightingSystemUI
                         fs.Write(bytes, 0, bytes.Length);
                     }
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            SaveLayouts(input);
+            SaveGeometry(input);
         }
-
-        private void layoutEditorForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            SaveLayouts("Default");
-
-        }
-        private void LoadLayOut(string fileName)
+        private void LoadGeometry(string fileName)
         {
             try
             {
@@ -347,77 +311,65 @@ namespace LightingSystemUI
                     BinaryFormatter bf = new BinaryFormatter();
                     FloorPlan floorPlan = new FloorPlan();
                     floorPlan = (FloorPlan)bf.Deserialize(stream);
-                    Rooms = floorPlan.rectList;
-                    myListOfLines = floorPlan.lines;
+                    drawnRectangles = floorPlan.rectList;
+                    drawnLines = floorPlan.lines;
                     ListRectCorners = floorPlan.ListRectCorners;
                 }
             }
             catch (IOException ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-
+            { MessageBox.Show("Error: " + ex.Message); }
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        #endregion
+
+        #region buttons/misc
+        private void btnSaveLayout_Click(object sender, EventArgs e)
         {
-            //if (numericUpDown1.Value > 100)
-            //{
-            //    numericUpDown1.Value = 100;
-            //    pointToValue = (int) numericUpDown1.Value;
-            //} else if (numericUpDown1.Value < 0)
-            //{
-            //    numericUpDown1.Value = 0;
-            //    pointToValue = (int) numericUpDown1.Value;
-            //} else
-            //{
-            //    pointToValue = (int)numericUpDown1.Value;
-            //}
+            SavePanelAsBitmap(panel1);
         }
-
-        private void layoutEditorForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Dispose();
-            Rooms.Clear();
-            myListOfLines.Clear();
-        }
-
-        private void SaveLayouts(string fileName)
-        {
-            FloorPlan floorPlan = new FloorPlan();
-            floorPlan.lines = myListOfLines;
-            floorPlan.rectList = Rooms;
-            floorPlan.ListRectCorners = ListRectCorners;
-
-            try
-            {
-                using (Stream stream = File.Open("./Layouts/serialized/" + fileName + ".bin", FileMode.Create))
-                {
-                    BinaryFormatter bf = new BinaryFormatter();
-                    bf.Serialize(stream, floorPlan);
-                }
-            }
-            catch (IOException ex)
-            {
-                MessageBox.Show("Error: {" + ex.Message + "}");
-            }
-
-        }
-        
-
         private void btnDrawLine_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Cross;
             lineDrawBegin = true;
             rectDrawBegin = false;
         }
-
         public void btnDrawRectangle_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Help;
             rectDrawBegin = true;
             lineDrawBegin = false;
         }
-
+        private void MyTimer_Tick(object sender, EventArgs e) //for when lines and rectangles are being "traced"
+        {
+            if (rectDrawing) DrawReversibleRectangle();
+            else if (lineDrawing) DrawReversibleLine();
+            panel1.Invalidate();
+        }
+        private void layoutEditorForm_Click(object sender, EventArgs e) //make sure user is drawing in the panel
+        {
+            if (rectDrawBegin)
+            {
+                lblError.Text = "You must draw the rectangle within the white panel";
+                lblError.Visible = true;
+            }
+            else if (lineDrawBegin)
+            {
+                lblError.Text = "You must draw the line within the white panel";
+                lblError.Visible = true;
+            }
+            else
+                lblError.Visible = false;
+        }
+        private void layoutEditorForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaveGeometry("Default");
+        }
+        private void layoutEditorForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+            drawnRectangles.Clear();
+            drawnLines.Clear();
+        }
+        #endregion  
     }
 }

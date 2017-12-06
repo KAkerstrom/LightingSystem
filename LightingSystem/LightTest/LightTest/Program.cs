@@ -16,7 +16,7 @@ namespace LightTest
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Kyle.KyleTestForm());
+            Application.Run(new Form1());
         }
     }
 }
